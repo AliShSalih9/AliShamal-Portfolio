@@ -71,7 +71,7 @@ function Header({ activeSection }: HeaderProps) {
             aria-label={isMobileMenuOpen ? "Close menu" : "Open menu"}
           />
           <button className='download-Button'   onClick={() =>
-    window.open('/src/assets/Ali Shamal Mobile Developer.pdf', '_blank')
+    window.open('./assets/Ali Shamal Mobile Developer.pdf', '_blank')
   }>Download CV</button>
         </div>
       </header>
