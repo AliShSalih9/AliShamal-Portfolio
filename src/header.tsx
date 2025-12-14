@@ -2,6 +2,8 @@ import { faList, faTimes } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { useEffect, useState } from 'react';
 import './header.css';
+import cvPdf from './assets/Ali Shamal Mobile Developer.pdf'
+
 
 interface HeaderProps {
   activeSection?: string;
@@ -70,9 +72,13 @@ function Header({ activeSection }: HeaderProps) {
             onClick={toggleMobileMenu}
             aria-label={isMobileMenuOpen ? "Close menu" : "Open menu"}
           />
-          <button className='download-Button'   onClick={() =>
-    window.open('./assets/Ali Shamal Mobile Developer.pdf', '_blank')
-  }>Download CV</button>
+          // In your JSX:
+<button 
+  className='download-Button'   
+  onClick={() => window.open(cvPdf, '_blank')}
+>
+  Download CV
+</button>
         </div>
       </header>
 
