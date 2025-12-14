@@ -1,4 +1,6 @@
  import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+ import aboutIcon from './assets/about-icon.png'
+
 import { 
   faLinkedin, 
   faGithub, 
@@ -52,7 +54,7 @@ const timelineData = [
       <div className="profileSection">
         <div className="avatarWrapper">
           <div className="avatarRing">
-            <img src="./assets/about-icon.png" alt="" className="avatar" />
+<img src={aboutIcon} alt="" className="avatar" />
             <h3 className="about-name">Ali Shamal</h3>
             <p className="about-title">Software Engineer</p>
             
