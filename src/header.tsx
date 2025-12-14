@@ -2,7 +2,7 @@ import { faList, faTimes } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { useEffect, useState } from 'react';
 import './header.css';
-import cvPdf from './assets/Ali Shamal Mobile Developer.pdf'
+import cvPdf from '/assets/Ali_Shamal_Mobile_Developer.pdf'
 
 
 interface HeaderProps {
