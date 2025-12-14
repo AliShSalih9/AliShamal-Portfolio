@@ -72,8 +72,7 @@ function Header({ activeSection }: HeaderProps) {
             onClick={toggleMobileMenu}
             aria-label={isMobileMenuOpen ? "Close menu" : "Open menu"}
           />
-          // In your JSX:
-<button 
+ <button 
   className='download-Button'   
   onClick={() => window.open(cvPdf, '_blank')}
 >
