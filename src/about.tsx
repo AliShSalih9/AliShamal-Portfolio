@@ -54,7 +54,7 @@ const timelineData = [
       <div className="profileSection">
         <div className="avatarWrapper">
           <div className="avatarRing">
-<img src={aboutIcon} alt="" className="avatar" />
+<img src={aboutIcon} alt="Ali Shamal" className="avatar" />
             <h3 className="about-name">Ali Shamal</h3>
             <p className="about-title">Software Engineer</p>
             
