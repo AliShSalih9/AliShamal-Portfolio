@@ -3,8 +3,8 @@ import react from '@vitejs/plugin-react'
 
 // https://vite.dev/config/
 export default defineConfig({
-base: "Ali-Portofolio",
-  plugins: [
+  base: '/', // Should be '/' for Vercel
+ plugins: [
     
     react({
       
