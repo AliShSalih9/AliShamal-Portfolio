@@ -1,0 +1,169 @@
+@import url('https://fonts.googleapis.com/css2?family=Stardos+Stencil:wght@400;700&family=Inter:wght@300;400;500;600&display=swap');
+.services-container{
+      display: flex;
+     flex-direction: column;
+    align-items: center;
+    gap: 40px;
+    margin: auto auto;
+    max-width: 1300px;
+    padding: 40px 20px;
+    border: 55px black;
+    justify-content: center;
+    justify-items: center;
+
+}
+    
+.services-container h2 {
+    font-family: "Stardos Stencil", serif;
+    font-size: 30px;
+    margin: 0 0 10px 0;
+    
+}
+.services-container h2::after {
+    content: '';
+    display: block;
+    height: 6px;
+    width: 70px;
+    margin-top: 8px;
+    border-radius: 8px;
+    background: linear-gradient(90deg, #FF7A00, #FFC48A);
+    box-shadow: 0 0 10px rgba(255, 122, 0, 0.5);
+}
+.services-container p
+{
+    font-size: 14px;
+    color: gray;
+        text-align: center;
+
+}
+.services-card
+{
+display: flex;
+gap:20px;
+flex-wrap: wrap;
+align-items: center;
+justify-content: center;
+
+}
+.service-card {
+    width: 350px;
+    min-height: 125px;
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(10px);
+    border-radius: 20px;
+    padding: 25px 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 12px;
+    box-shadow: 0 8px 30px rgba(108, 47, 0, 0.15);
+    border: 1px solid rgba(108, 47, 0, 0.1);
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    position: relative;
+    overflow: hidden;
+    cursor: pointer;
+}
+
+.service-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(108, 47, 0, 0.08), transparent);
+    transition: left 0.6s;
+}
+
+.service-card:hover::before {
+    left: 100%;
+}
+
+.service-card::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    border-radius: 20px;
+    padding: 2px;
+    background: linear-gradient(135deg, #6c2f00, #a04500, #d4824a);
+    -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+    -webkit-mask-composite: xor;
+    mask-composite: exclude;
+    opacity: 0;
+    transition: opacity 0.3s;
+}
+
+.service-card:hover::after {
+    opacity: 1;
+}
+
+.service-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 20px 50px rgba(108, 47, 0, 0.3);
+}
+
+.service-card img {
+    width: 125px;
+    height: 125px;
+    object-fit: contain;
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    filter: drop-shadow(0 4px 8px rgba(108, 47, 0, 0.2));
+}
+
+.service-card:hover img {
+    transform: scale(1.15) rotate(5deg);
+    filter: drop-shadow(0 8px 15px rgba(108, 47, 0, 0.35));
+}
+
+.service-card h3 {
+    font-family: "Stardos Stencil", serif;
+    font-size: 19px;
+    color: #6c2f00;
+    margin: 0;
+    transition: all 0.3s;
+    position: relative;
+    z-index: 1;
+}
+
+.service-card:hover h3 {
+    color: #a04500;
+    transform: scale(1.05);
+}
+
+.service-card p {
+    font-family: "Inter", sans-serif;
+    font-size: 14px;
+    color: #555;
+    margin: 0;
+    line-height: 1.6;
+    position: relative;
+    z-index: 1;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .services-container
+    {
+        justify-content: center;
+        align-items: center;
+    }
+    .service-card {
+        width: 225px;
+        max-width: 350px;
+        justify-content: center;
+    }
+    .service-card h3
+    {
+        font-size: 12px;
+    }
+    .service-card p
+    {
+        font-size: 9px;
+    }
+    .service-card img
+    {
+        width: 75px;
+        height: 75px;
+    }
+}

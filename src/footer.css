@@ -1,0 +1,58 @@
+.footer
+{
+        background: rgba(255, 255, 255, 0.85); /* transparent white */
+
+   padding: 30px;
+  border-radius: 10px;
+  font-family: 'Courier New', monospace;
+  box-shadow: 0 10px 30px rgba(0, 0, 0,0.2);
+              border: 2px solid #C85300;
+max-width: 1350px;
+  margin: 0 auto;
+
+}
+.terminal-line
+{
+    font-size: 14px;
+    color: #C85300;
+    margin-bottom: 6px;
+   
+
+}
+.terminal-line span
+{
+                color: #858585;
+
+}
+.cursor
+{
+    width: 10px;
+    height: 18px;
+    display: inline-block;
+    background: #C85300;
+    animation: blink 1s infinite;
+    margin-top:10px;
+}
+@keyframes blink
+{
+    0%,50%{
+        opacity: 1;
+    }
+    51%,100%{
+        opacity: 0;
+    }
+}
+
+@media (max-width=768px) {
+    .footer 
+    {
+        padding: 20px;
+        border-radius: 8px;
+    }
+    .terminal-line
+    {
+        font-size: 12px;
+        word-break: break-word;
+    }
+    
+}

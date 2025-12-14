@@ -1,0 +1,198 @@
+.skills-container
+{
+ min-height: 100vh;
+    display: flex;
+    max-width: 1400px;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    margin: 0 auto;
+    gap: 60px;
+    padding: 50px 80px;    
+}
+.skills-container h2 {
+    font-family: "Stardos Stencil", serif;
+    font-size: 30px;
+    margin: 0 0 10px 0;
+}
+.skills-container h2::after {
+    content: '';
+    display: block;
+    height: 6px;
+    width: 70px;
+    margin-top: 8px;
+    border-radius: 8px;
+    background: linear-gradient(90deg, #FF7A00, #FFC48A);
+    box-shadow: 0 0 10px rgba(255, 122, 0, 0.5);
+}
+
+ .skills-logos
+ {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    
+ }
+/* Skill Card Container */
+.skill-card {
+  width: 250px;
+  height: 250px;
+  background-color: white;
+  border-radius: 12px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  padding: 15px;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Hover Effect */
+.skill-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
+}
+.skills-container p
+{
+    font-size: 14px;
+    color: gray;
+    text-align: center;
+}
+/* SVG Icon Container using CSS Mask */
+ 
+
+ 
+/* Skill Name */
+.skill-card-name {
+  font-size: 14px;
+  font-weight: 600;
+  color: #1e293b;
+  text-align: center;
+  margin: 0;
+  line-height: 1.2;
+}
+
+/* Optional: Description text */
+.skill-card-description {
+  font-size: 11px;
+  color: #64748b;
+  text-align: center;
+  margin: 5px 0 0 0;
+  line-height: 1.3;
+}
+
+/* Skills Grid Container */
+.skills-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(125px, 1fr));
+  gap: 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+/* Alternative: Flexbox Layout */
+.skills-flex {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: center;
+  padding: 20px;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .skills-container
+
+  {
+    min-height: auto;
+  }
+  .skill-card {
+    width: 75px;
+    height: 75px;
+    justify-content: center;
+    align-items: center;
+    justify-items: center;
+    align-items: center;
+  }
+  
+  .skill-card-icon {
+    width: 75px;
+    height: 75px;
+  }
+  
+  .skill-card-name {
+     display: none;
+  }
+  .skill-card h3
+  {
+font-size: 10px;
+ 
+   }
+  .skill-card-description
+  {
+    display: none;
+  }
+}
+
+@media (max-width: 650px) {
+  .skill-card {
+  width: 75px;
+    height: 75px;
+  }
+  
+  .skills-grid {
+    grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+    gap: 15px;
+  }
+  .skill-card h3
+  {
+font-size: 10px;
+display: none;
+ 
+   }
+  .skill-card-description
+  {
+    display: none;
+  }
+}
+
+/* Optional: Loading skeleton */
+.skill-card.loading {
+  background: linear-gradient(90deg, #f0f0f0 25%, #e0e0e0 50%, #f0f0f0 75%);
+  background-size: 200% 100%;
+  animation: loading 1.5s infinite;
+}
+
+@keyframes loading {
+  0% {
+    background-position: 200% 0;
+  }
+  100% {
+    background-position: -200% 0;
+  }
+}
+
+/* Optional: Color accent on hover */
+.skill-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 3px;
+  background: var(--skill-color, #FF7A00);
+  transform: scaleX(0);
+  transition: transform 0.3s ease;
+}
+
+.skill-card:hover::before {
+  transform: scaleX(1);
+}
+
+/* Dark mode support */
+ 

@@ -1,0 +1,413 @@
+/* Base Styles */
+.experiences-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 60px 20px;
+  background-color: #f9f9f9;
+  gap: 40px;
+}
+
+.experiences-container h2 {
+  font-family: "Stardos Stencil", serif;
+  font-size: 30px;
+  margin-bottom: 15px;
+  max-width: 1300px;
+}
+
+.experiences-container h2::after {
+  content: "";
+  display: block;
+  height: 6px;
+  width: 70px;
+  margin-top: 8px;
+  border-radius: 8px;
+  background: linear-gradient(90deg, #ff7a00, #ffc48a);
+  box-shadow: 0 0 10px rgba(255, 122, 0, 0.5);
+}
+
+.experiences-container p {
+  font-size: 18px;
+  max-width: 40%;
+  align-items: center;
+  text-align: center;
+  color: gray;
+}
+
+.exp-content {
+  width: 100%;
+  max-width: 1350px;
+  padding: 0 20px;
+}
+
+.experience-card {
+  max-width: 820px;
+  border: rgb(232, 232, 232) 1px solid;
+  padding: 10px 40px;
+  border-radius: 12px;
+  margin: 20px auto;
+  box-shadow: rgba(0, 0, 0, 0.08) 0px 2px 15px;
+}
+
+.exp-header {
+  max-width: 900px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.exp-header-right {
+  display: flex;
+  justify-content: right;
+  align-items: center;
+  width: 300px;
+}
+
+.exp-header-right p {
+  font-size: 12px;
+  font-weight: bold;
+  margin: 0;
+  width: fit-content;
+  width: auto;
+  color: #555;
+  letter-spacing: 0.5px;
+}
+
+.exp-header-right .toggle-btn {
+  background: none;
+  border: none;
+  color: #FF7A00;
+  padding: 8px 16px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 29px;
+  transition: transform 0.3s ease;
+}
+
+.rotate {
+  transform: rotate(180deg);
+}
+
+.exp-details {
+  margin-top: 5px;
+  font-size: 16px;
+  color: #333;
+  width: 100%;
+  line-height: 1.6;
+}
+
+.exp-details hr {
+  margin: 20px 0;
+  border-color: #fff5f5;
+}
+
+.location-details {
+  display: flex;
+  align-items: center;
+  gap: 30px;
+  color: #ff7b00;
+  width: 100%;
+  font-weight: 600;
+}
+
+.location-details .location {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  justify-content: center;
+}
+
+.location-details .location span {
+  margin: 0;
+  font-size: 14px;
+}
+
+.location-details .link {
+  display: flex;
+  align-items: start;
+  gap: 8px;
+  justify-content: center;
+  align-self: center;
+
+  
+}
+
+.location-details .link span {
+  margin: 0;
+  font-size: 12px;
+    color: #555;
+ 
+}
+
+span {
+  margin: 35px 0 0 0;
+  color: #444;
+  font-size: 14px;
+  line-height: 1.2;
+  letter-spacing: 0.3px;
+}
+
+.card-Technologies {
+  margin-top: 15px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.card-Technologies data {
+  background: #ffefd5;
+  color: #ff7a00;
+  padding: 6px 12px;
+  border-radius: 20px;
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.scroll-to-top {
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  width: 50px;
+  height: 50px;
+  background-color: #ff7a00;
+  color: white;
+  border: none;
+  border-radius: 25px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  cursor: pointer;
+  font-size: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+  transition: background-color 0.3s;
+}
+
+.scroll-value {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  z-index: 999;
+  transition: width 0.25s;
+}
+
+/* ============================================
+   RESPONSIVE BREAKPOINTS
+   ============================================ */
+
+/* Large Desktop (1200px - 1440px) */
+@media (max-width: 1440px) {
+  .exp-content {
+    max-width: 1200px;
+  }
+}
+
+/* Desktop/Laptop (992px - 1199px) */
+@media (max-width: 1199px) {
+  .exp-content {
+    max-width: 960px;
+  }
+  
+  .experience-card {
+    max-width: 700px;
+    padding: 10px 30px;
+  }
+}
+
+/* Tablet Landscape (768px - 991px) */
+@media (max-width: 991px) {
+  .experiences-container {
+    padding: 50px 20px;
+    gap: 30px;
+  }
+  
+  .experiences-container h2 {
+    font-size: 26px;
+  }
+  
+  .experiences-container p {
+    font-size: 16px;
+    max-width: 60%;
+  }
+  
+  .exp-content {
+    max-width: 100%;
+    padding: 0 15px;
+  }
+  
+  .experience-card {
+    max-width: 100%;
+    padding: 10px 25px;
+  }
+  
+  .exp-header-right {
+    width: auto;
+  }
+  
+  .location-details {
+    gap: 20px;
+  }
+}
+
+/* Tablet Portrait (576px - 767px) */
+@media (max-width: 767px) {
+  .experiences-container {
+    padding: 40px 15px;
+    gap: 25px;
+  }
+  
+  .experiences-container h2 {
+    font-size: 24px;
+    text-align: center;
+  }
+  
+  .experiences-container h2::after {
+    margin-left: auto;
+    margin-right: auto;
+  }
+  
+  .experiences-container p {
+    font-size: 15px;
+    max-width: 80%;
+  }
+  
+  .experience-card {
+    padding: 15px 20px;
+    margin: 15px auto;
+  }
+  
+  .exp-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+  }
+  
+  .exp-header-right {
+    width: 100%;
+    justify-content: space-between;
+  }
+  
+  .exp-details {
+    font-size: 15px;
+  }
+  
+  .location-details {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 12px;
+  }
+  
+  .location-details .location p,
+  .location-details .link p {
+    font-size: 14px;
+  }
+  
+  span {
+    font-size: 13px;
+    margin: 25px 0 0 0;
+  }
+  
+  .card-Technologies data {
+    font-size: 13px;
+    padding: 5px 10px;
+  }
+  
+  .scroll-to-top {
+    width: 45px;
+    height: 45px;
+    bottom: 20px;
+    right: 20px;
+    font-size: 20px;
+  }
+}
+
+/* Mobile (480px - 575px) */
+@media (max-width: 575px) {
+  .experiences-container {
+    padding: 30px 10px;
+    gap: 20px;
+  }
+  
+  .experiences-container h2 {
+    font-size: 22px;
+  }
+  
+  .experiences-container p {
+    font-size: 14px;
+    max-width: 95%;
+  }
+  
+  .exp-content {
+    padding: 0 10px;
+  }
+  
+  .experience-card {
+    padding: 12px 15px;
+    margin: 12px auto;
+  }
+  
+  .exp-header-right p {
+    font-size: 12px;
+  }
+  
+  .exp-header-right .toggle-btn {
+    font-size: 24px;
+    padding: 6px 12px;
+  }
+  
+  .exp-details {
+    font-size: 14px;
+  }
+  
+  .location-details .location p,
+  .location-details .link p {
+    font-size: 13px;
+  }
+  
+  .card-Technologies {
+    gap: 8px;
+  }
+  
+  .card-Technologies data {
+    font-size: 12px;
+    padding: 4px 8px;
+  }
+}
+
+/* Small Mobile (below 480px) */
+@media (max-width: 479px) {
+  .experiences-container {
+    padding: 25px 8px;
+  }
+  
+  .experiences-container h2 {
+    font-size: 20px;
+  }
+  
+  .experiences-container h2::after {
+    width: 50px;
+    height: 4px;
+  }
+  
+  .experiences-container p {
+    font-size: 13px;
+  }
+  
+  .experience-card {
+    padding: 10px 12px;
+  }
+  
+  .exp-header-right .toggle-btn {
+    font-size: 22px;
+  }
+  
+  .scroll-to-top {
+    width: 40px;
+    height: 40px;
+    bottom: 15px;
+    right: 15px;
+    font-size: 18px;
+    border-radius: 20px;
+  }
+}
