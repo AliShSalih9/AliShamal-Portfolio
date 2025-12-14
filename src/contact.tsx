@@ -40,7 +40,7 @@ if (loading) {
 
     try
     {
-      const res =await axios.post("http://localhost:5000/contact",form);
+      const res =await axios.post("https://api-ali-shamal-portfolio.vercel.app/contact",form);
       if(res.data.success)
       {
           setStatus("Message sent successfully!");

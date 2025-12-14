@@ -259,7 +259,7 @@ textarea {
   }
 
   .contact-content {
-    flex-direction: column;
+    flex-direction: column-reverse;
     gap: 30px;
   }
 

@@ -2,6 +2,8 @@ import './hero.css'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import {  faFlutter,faNodeJs,faLaravel,faReact,} from '@fortawesome/free-brands-svg-icons'
 import { faLaptopCode ,faDatabase,faServer} from "@fortawesome/free-solid-svg-icons";
+import heroImage from './assets/hero.png';
+
 
 function Hero() {
     return (
@@ -10,7 +12,7 @@ function Hero() {
 
                 <div className="left-container">
                     <img 
-                        src="src\assets\hero.png" 
+                        src={heroImage} 
                         alt="profile" 
                     />
                 </div>

@@ -30,10 +30,10 @@ Each skill highlights my expertise and experience in building real-world applica
             <div className="skill-content">
                <div className="skills-logos">
 {skills.map((skill) => (
-  <div key={skill.name} className='skill-card' style={{ textAlign: 'center', margin: '10px' }}>
+  <div key={skill.name} className='skill-card' style={{ textAlign: 'center', margin: '10px 0px 10px 3px'  }}>
     <div style={{
-      width: '60px',
-      height: '60px',
+      width: '50px',
+      height: '50px',
       backgroundColor: skill.color,
       maskImage: `url(${skill.logo})`,
       WebkitMaskImage: `url(${skill.logo})`,
@@ -43,8 +43,7 @@ Each skill highlights my expertise and experience in building real-world applica
       WebkitMaskRepeat: 'no-repeat',
       maskPosition: 'center',
       WebkitMaskPosition: 'center',
-      margin: '0 auto'
-    }} />
+     }} />
     <h3>{skill.name}</h3>
     <p className='skill-card-description'>{skill.description}</p>
   </div>
