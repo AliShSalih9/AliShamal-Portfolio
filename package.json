@@ -1,6 +1,6 @@
 {
   "name": "protofile",
-"homepage": "https://AliShSalih9.github.io/AliShamal-Portfolio",
+  "homepage": "https://AliShSalih9.github.io/AliShamal-Portfolio",
   "private": true,
   "version": "0.0.0",
   "type": "module",
@@ -9,8 +9,8 @@
     "build": "tsc -b && vite build",
     "lint": "eslint .",
     "preview": "vite preview",
-    "predeploy":"npm run build",
-    "deploy":"gh-pages -d dist"
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d dist"
   },
   "dependencies": {
     "@fortawesome/fontawesome-free": "^7.1.0",
@@ -26,7 +26,8 @@
     "nodemailer": "^7.0.11",
     "nodemon": "^3.1.11",
     "react": "^19.2.0",
-    "react-dom": "^19.2.0"
+    "react-dom": "^19.2.0",
+    "react-hook-form": "^7.68.0"
   },
   "devDependencies": {
     "@eslint/js": "^9.39.1",

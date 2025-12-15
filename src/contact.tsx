@@ -81,7 +81,7 @@ setLoading(false);
         <div className="contact-message">
     <p> Email<div className="required">*</div></p>
    <input
-                type="text"
+                type="email"
                 name="email"
                    value={form.email}
                  onChange={handleChange}
@@ -105,12 +105,16 @@ setLoading(false);
    <textarea
                  name="message"
                  value={form.message}
+                 minLength={15}
+                 
                  onChange={handleChange}
                  placeholder="Tell me about your project"
                  required
               />
     </div>
-    <button type='submit'>Send Message</button>
+<button type="submit" disabled={loading}>
+  {loading ? "Sending..." : "Send Message"}
+</button>
     
     {statusMessage}
 </div>
