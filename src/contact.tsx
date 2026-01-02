@@ -116,7 +116,8 @@ setLoading(false);
   {loading ? "Sending..." : "Send Message"}
 </button>
     
- </div>
+    {statusMessage}
+</div>
 <div className="left-contact">
     <h2>Get In Touch</h2>
 <div className="info-contact">
@@ -171,7 +172,7 @@ setLoading(false);
   </a>
 
   <a 
-    href="#" 
+    href="https://www.instagram.com/ali.aqrawi9/" 
     className="social-fallow"
     target="_blank"
     rel="noopener noreferrer"
