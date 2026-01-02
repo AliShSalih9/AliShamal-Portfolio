@@ -108,7 +108,7 @@ setLoading(false);
                  minLength={15}
                  
                  onChange={handleChange}
-                 placeholder="Tell me about your project"
+                 placeholder="Tell me about your idea and what you’d like to achieve."
                  required
               />
     </div>
@@ -116,8 +116,7 @@ setLoading(false);
   {loading ? "Sending..." : "Send Message"}
 </button>
     
-    {statusMessage}
-</div>
+ </div>
 <div className="left-contact">
     <h2>Get In Touch</h2>
 <div className="info-contact">
