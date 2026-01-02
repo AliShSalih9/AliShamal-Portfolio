@@ -364,3 +364,20 @@ textarea {
     font-size: 24px;
   }
 }
+.social-icons a {
+  font-size: 26px;
+  margin: 0 12px;
+  transition: transform 0.3s ease, filter 0.3s ease;
+  text-decoration: none;
+}
+
+.social-icons a:hover {
+  transform: scale(1.2);
+  filter: brightness(1.2);
+}
+
+/* Brand colors */
+.social-icons a:nth-child(1) { color: #0A66C2; } /* LinkedIn */
+.social-icons a:nth-child(2) { color: #181717; } /* GitHub */
+.social-icons a:nth-child(3) { color: #E4405F; } /* Instagram */
+.social-icons a:nth-child(4) { color: #1877F2; } /* Facebook */

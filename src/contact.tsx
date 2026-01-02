@@ -171,7 +171,7 @@ setLoading(false);
   </a>
 
   <a 
-    href="https://www.instagram.com/ali.shamal9/" 
+    href="https://www.instagram.com/ali.aqrawi9/" 
     className="social-fallow"
     target="_blank"
     rel="noopener noreferrer"
