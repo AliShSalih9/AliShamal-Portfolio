@@ -126,7 +126,7 @@ setLoading(false);
 </div>
 <div className="content-contact">
     <h5>Email</h5>
-    <a href='mailto:alissalih66@gmail.com?subject=Contact&body=Hello%20Ali%2C%20I%20want%20to%20message%20you'>alissalih66@gmail.com</a>
+    <a href='mailto:ali.shamal.code@gmail.com?subject=Contact&body=Hello%20Ali%2C%20I%20want%20to%20message%20you'>ali.shamal.code@gmail.com</a>
 </div>
 
 </div>
