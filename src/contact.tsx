@@ -35,7 +35,7 @@ function contact() {
   } else {
     statusMessage = null; // nothing to show
   }
-  const handleSubmit = async (e: { preventDefault: () => void }) => {
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     setLoading(true);
 
@@ -44,19 +44,22 @@ function contact() {
         "https://api-ali-shamal-portfolio.vercel.app/contact",
         form
       );
+
+      // Show backend message
+      setStatus(res.data.message || "Message sent successfully!");
+
       if (res.data.success) {
-        setStatus("Message sent successfully!");
         setForm({ name: "", email: "", subject: "", message: "" }); // reset form
-      } else {
-        setStatus("Failed to send message.");
       }
+    } catch (error: unknown) {
+      // TypeScript-safe
+      const err = error as any; // simplest approach
+      setStatus(err.response?.data?.message || "Something went wrong");
+    } finally {
       setLoading(false);
-    } catch (error) {
-        const err = error as any;  // tell TS "trust me"
-      setLoading(false);
-       setStatus(err.response?.data?.message || "Something went wrong");
     }
   };
+
   return (
     <>
       <form onSubmit={handleSubmit}>
