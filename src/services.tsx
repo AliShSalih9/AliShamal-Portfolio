@@ -10,7 +10,7 @@ function services()
   {
     service: 'Mobile App Development',
     desc: 'I create fast, modern, and user-friendly mobile apps for Android and iOS using Flutter — including UI design, API integration, database setup, and full deployment.',
-    logo: 'https://fovtysolutions.com/wp-content/uploads/2022/09/mobile-app-development.png'
+    logo: 'https://cdni.iconscout.com/illustration/premium/thumb/mobile-app-development-illustration-svg-download-png-6529899.png'
   },
   {
     service: 'Web Development',
