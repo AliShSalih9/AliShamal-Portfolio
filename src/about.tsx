@@ -88,7 +88,7 @@ const timelineData = [
 </a>
 
 <a 
-  href="https://www.instagram.com/ali.shamal9/" 
+  href="https://www.instagram.com/alishamal.dev/" 
   className="socialIcon" 
   target="_blank"
   style={{ color: "#E4405F" }}
