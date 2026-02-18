@@ -8,8 +8,8 @@
   margin: auto auto;
   padding: 40px 20px;
   border: 55px black;
-  background-color: rgb(250, 250, 250);
   min-height: 100vh;
+  color: var(--bg-color);
 }
 
 .contact-content {
@@ -25,29 +25,21 @@
   font-size: 30px;
   margin-bottom: 15px;
   max-width: 1300px;
+  color: var(--bg-hero-color);
+  background-image: linear-gradient(
+    to right,
+    #ff8c42 0%,
+    rgba(3, 244, 164, 0) 70%
+  );
+  background-size: 100% 2px;
+  background-position: 0 100%;
+  background-repeat: no-repeat;
 }
 
-.contact-container h3::after {
-  content: "";
-  display: block;
-  height: 6px;
-  width: 70px;
-  margin-top: 8px;
-  border-radius: 8px;
-  background: linear-gradient(90deg, #ff7a00, #ffc48a);
-  box-shadow: 0 0 10px rgba(255, 122, 0, 0.5);
-}
-
-.contact-container p {
-  font-size: 18px;
-  max-width: 40%;
-  align-items: center;
-  text-align: center;
-  color: gray;
-}
+/* Underline like the image - left aligned, smaller */
 
 .contact-container .right-contact {
-  background: white;
+  background: var(--bg-project-color);
   padding: 40px;
   display: flex;
   flex-direction: column;
@@ -59,52 +51,45 @@
 
 .contact-container .right-contact .contact-message p {
   font-size: 20px;
-  color: black;
+  color: var(--bg-color);
   display: flex;
 }
 
 .contact-container .right-contact .contact-message p .required {
   font-size: 22px;
-  color: brown;
+  color: var(--bg-subColor);
   display: flex;
 }
 
 .contact-container .right-contact .contact-message input::placeholder {
-  color: gray;
+  color: var(--bg-subColor);
 }
 
 .contact-container .right-contact .contact-message input,
-textarea {
+.contact-container .right-contact .contact-message textarea {
   font-size: 15px;
   padding: 15px 12px;
-  background-color: rgb(250, 250, 250);
-  border: 2px solid rgb(224, 224, 224);
+  background-color: var(--bg-project-color);
+  border: 1px solid var(--bg-subColor);
   width: 100%;
   border-radius: 8px;
-  color: black;
-  transition: border-color 0.3s;
+  color: var(--bg-color);
+  transition: all 0.3s ease;
+}
+
+.contact-container .right-contact .contact-message input:focus,
+.contact-container .right-contact .contact-message textarea:focus {
+  border: 1px solid var(--bg-header-color);
+  outline: none;
 }
 
 textarea {
   height: 100px;
 }
 
-.contact-container .right-contact .contact-message input:focus,
-.contact-container .right-contact .contact-message textarea:focus {
-  font-size: 18px;
-  padding: 15px 12px;
-  background-color: rgb(250, 250, 250);
-  width: 100%;
-  border-radius: 8px;
-  border: 2px solid rgb(250, 250, 250);
-  color: black;
-  outline: none;
-  transition: border-color 0.3s;
-}
-
 .contact-container button {
   width: 100%;
-  background-color: rgb(255, 140, 0);
+  background-color: var(--bg-header-color);
   color: white;
   border: none;
   border-radius: 8px;
@@ -118,7 +103,7 @@ textarea {
 }
 
 .contact-container .left-contact {
-  background: white;
+  background: var(--bg-project-color);
   padding: 40px;
   display: flex;
   width: 50%;
@@ -135,7 +120,7 @@ textarea {
 }
 
 .info-contact h5 {
-  color: gray;
+  color: var(--bg-subColor);
   font-size: 15px;
 }
 
@@ -152,7 +137,7 @@ textarea {
   display: flex;
   align-items: center;
   justify-content: center;
-  background-color: rgb(255, 243, 224);
+  background-color: var(--bg-stack-color);
   border-radius: 8px;
 }
 
@@ -174,19 +159,22 @@ textarea {
   width: 44px;
   height: 44px;
   font-size: 28px;
-  color: black;
-  background: rgb(245, 245, 245);
+  color: #fff;
+  background: var(--bg-stack-color);
   text-decoration: none;
   display: flex;
   align-items: center;
   justify-content: center;
   text-align: center;
   border-radius: 8px;
-  transition: background-color 0.3s;
+  transition:
+    background-color 0.3s,
+    color 0.3s; /* Added color transition */
 }
 
 .fallowMe-social .social-fallow:hover {
-  background-color: rgb(235, 235, 235);
+  background-color: var(--bg-background);
+  color: var(--bg-color);
 }
 
 .contact-message {
@@ -367,7 +355,9 @@ textarea {
 .social-icons a {
   font-size: 26px;
   margin: 0 12px;
-  transition: transform 0.3s ease, filter 0.3s ease;
+  transition:
+    transform 0.3s ease,
+    filter 0.3s ease;
   text-decoration: none;
 }
 
@@ -378,7 +368,15 @@ textarea {
 
 /* Brand colors */
 /* Brand colors using order */
-.fallowMe-social a:nth-child(1) { color: #0A66C2; } /* LinkedIn */
-.fallowMe-social a:nth-child(2) { color: #181717; } /* GitHub */
-.fallowMe-social a:nth-child(3) { color: #E4405F; } /* Instagram */
-.fallowMe-social a:nth-child(4) { color: #1877F2; } /* Facebook */
+.fallowMe-social a:nth-child(1) {
+  color: #0a66c2;
+} /* LinkedIn */
+.fallowMe-social a:nth-child(2) {
+  color: #181717;
+} /* GitHub */
+.fallowMe-social a:nth-child(3) {
+  color: #e4405f;
+} /* Instagram */
+.fallowMe-social a:nth-child(4) {
+  color: #1877f2;
+} /* Facebook */

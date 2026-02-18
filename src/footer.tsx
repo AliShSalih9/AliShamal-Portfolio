@@ -1,34 +1,21 @@
 // Footer.jsx
-import './footer.css';
+import { faCode } from "@fortawesome/free-solid-svg-icons";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import "./footer.css";
 
 function Footer() {
-    const developer={
-        name:"Ali Shamal Salih",
-        role:"Software Engineer | Full Stack Developer",
-        location:"Duhok, Kurdistan Regional Government (KRG), Iraq",
-        contact : 'github.com/AliShSalih9 | linkedin.com/in/ali-shamal-895516288',
-        passion: "Clean Code & Innovation"
+  const currentYear = new Date().getFullYear();
 
-    }
-    const currentYear= new Date().getFullYear();
-    return (
-       
-    <div className="footer">
-            
- 
-<div className="terminal-line">$ cat contact.txt</div>
-            <div className="terminal-line"><span>&gt;</span> {developer.contact}</div>
-                        <div className="terminal-line">$ cat copyright.txt</div>
-
-                   <div className="terminal-line"><span>&gt;</span> © {currentYear} {developer.name}. All rights reserved.</div>
- <div className="terminal-line">
-  $ <span className="cursor"></span>
-</div>
-
-            </div>       
-    );
+  return (
+    <footer className="footer">
+      <div className="footer-content">
+        <p className="copyright">
+          © {currentYear} Ali Shamal Salih. Built with{" "}
+          <FontAwesomeIcon icon={faCode} /> by Ali Shamal
+        </p>
+      </div>
+    </footer>
+  );
 }
 
 export default Footer;
-
- 

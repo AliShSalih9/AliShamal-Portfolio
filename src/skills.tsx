@@ -23,7 +23,7 @@ const skills = [
 
     return <>
     <div className="skills-container" id="skills">
-        <h2>My Skills</h2>
+        <h2 className='section-title-underline'>My Skills</h2>
         <p>This page showcases all the tools and technologies I work with.
 Each skill highlights my expertise and experience in building real-world applications.</p>
         <div className="skill-item">

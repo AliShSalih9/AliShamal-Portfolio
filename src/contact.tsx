@@ -64,7 +64,7 @@ function contact() {
     <>
       <form onSubmit={handleSubmit}>
         <div className="contact-container" id="contact-page">
-          <h3>Contact Me</h3>
+          <h3 className="section-title-underline">Contact Me</h3>
           <p>
             Feel free to reach out for project inquiries, collaborations, or any
             questions. I’m always open to discussing new ideas and
@@ -180,6 +180,7 @@ function contact() {
                   className="social-fallow"
                   target="_blank"
                   rel="noopener noreferrer"
+                  style={{color:'white'}}
                 >
                   <FontAwesomeIcon icon={faGithub} />
                 </a>

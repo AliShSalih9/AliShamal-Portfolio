@@ -1,23 +1,75 @@
-:root
-{
-  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Condensed:ital,wght@0,100..900;1,100..900&display=swap');
+:root {
+  /* Typography */
+  font-family:
+ 'Roboto Condensed',
+    system-ui,
+    -apple-system,
+    BlinkMacSystemFont,
+    "Segoe UI",
+    Roboto,
+    Oxygen,
+    Ubuntu,
+    Cantarell,
+    "Open Sans",
+    "Helvetica Neue",
+    sans-serif;
   line-height: 1.5;
   font-weight: 400;
-  
-    color-scheme: light dark;
-  color: rgba(47, 47, 47, 0.87);
-        background: rgb(255, 255, 255); /* transparent white */
-
   font-synthesis: none;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+
+  /* Color Scheme */
+  color-scheme: light dark;
+  color: rgba(47, 47, 47, 0.87);
+
+  /* Light Mode Colors */
+  --bg-header-color: #ff8c42;
+  --bg-background: #f5f5f5;
+  --bg-header: rgba(255, 255, 255, 0.85);
+  --bg-header-text-color: #535353;
+  --bg-hero-color: #444;
+  --bg-skills: #ffe8d6e7;
+  --bg-stack-color: white;
+  --bg-navigation-color: #535353;
+  --bg-project-color: #fff;
+  --bg-subColor: gray;
+  --bg-service-color: linear-gradient(135deg, #6c2f00, #a04500, #d4824a);
+
+  /* Apply background */
+  background: var(--bg-background);
+}
+
+.dark {
+  /* Color Scheme */
+  color-scheme: dark;
+  color: #f2f2f2;
+
+  /* Dark Mode Colors */
+  --bg-header-color: #ff8c42;
+  --bg-color: #f2f2f2;
+  --bg-background: #141414;
+  --bg-header: rgba(2, 2, 2, 0.85);
+  --bg-navigation-color: #f2f2f2;
+  --bg-hero-color: #f2f2f2;
+  --bg-skills: #2a1f17e7;
+  --bg-stack-color: #2a1f17;
+  --bg-header-text-color: #f1f1f1;
+  --bg-project-color: #333;
+  --bg-subColor: #aaa;
+  --bg-service-color: linear-gradient(135deg, #f4f4f4, #dc744b, #4a2f20);
+
+  /* Apply background */
+  background: var(--bg-background);
 }
 html {
   scroll-behavior: smooth;
- }
-*{
+}
+* {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
- }
+}

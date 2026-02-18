@@ -26,7 +26,7 @@ function services()
 
     return <>
     <div className="services-container">
-        <h2>Services</h2>
+        <h2 className='section-title-underline'>Services</h2>
         <p>Discover the range of services I offer, designed to help you build modern, fast, and scalable digital products.</p>
         <div className="services-card"> {services.map((service, index) => (
     <div className="service-card" key={index}>

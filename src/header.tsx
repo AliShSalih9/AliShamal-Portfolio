@@ -1,17 +1,28 @@
-import { faList, faTimes } from '@fortawesome/free-solid-svg-icons';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { useEffect, useState } from 'react';
-import './header.css';
-import cvPdf from './assets/Ali_Shamal_Mobile_Developer.pdf'
-
+import {
+  faBars,
+  faList,
+  faMinus,
+  faMoon,
+  faSun,
+  faTimes,
+} from "@fortawesome/free-solid-svg-icons";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { useEffect, useState } from "react";
+import "./header.css";
 
 interface HeaderProps {
   activeSection?: string;
+  activeDarkMode?: boolean;
+  setActiveDarkMode?: (value: boolean) => void;
 }
 
-function Header({ activeSection }: HeaderProps) {
+function Header({
+  activeSection,
+  activeDarkMode,
+  setActiveDarkMode,
+}: HeaderProps) {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
-  const [activePage, setActivePage] = useState('hero');
+  const [activePage, setActivePage] = useState("hero");
 
   const toggleMobileMenu = () => setIsMobileMenuOpen(!isMobileMenuOpen);
   const closeMobileMenu = () => setIsMobileMenuOpen(false);
@@ -28,17 +39,19 @@ function Header({ activeSection }: HeaderProps) {
 
   // Lock body scroll when mobile menu is open
   useEffect(() => {
-    document.body.style.overflow = isMobileMenuOpen ? 'hidden' : 'unset';
-    return () => { document.body.style.overflow = 'unset'; }
+    document.body.style.overflow = isMobileMenuOpen ? "hidden" : "unset";
+    return () => {
+      document.body.style.overflow = "unset";
+    };
   }, [isMobileMenuOpen]);
 
   const navLinks = [
-    { href: '#hero', label: 'Home', id: 'hero' },
-    { href: '#about', label: 'About', id: 'about' },
-    { href: '#skills', label: 'Skills', id: 'skills' },
-    { href: '#projects', label: 'Projects', id: 'projects' },
-    { href: '#exp', label: 'Experiences', id: 'exp' },
-    { href: '#contact', label: 'Contact', id: 'contact' },
+    { href: "#hero", label: "Home", id: "hero" },
+    { href: "#about", label: "About", id: "about" },
+    { href: "#skills", label: "Skills", id: "skills" },
+    { href: "#projects", label: "Projects", id: "projects" },
+    { href: "#exp", label: "Experiences", id: "exp" },
+    { href: "#contact", label: "Contact", id: "contact" },
   ];
 
   return (
@@ -67,28 +80,45 @@ function Header({ activeSection }: HeaderProps) {
         </div>
         <div className="left-button">
           <FontAwesomeIcon
-            icon={isMobileMenuOpen ? faTimes : faList}
-            className='icon-menu'
+            icon={isMobileMenuOpen ? faMinus : faBars}
+            className={`icon-menu ${isMobileMenuOpen ? "open" : ""}`}
             onClick={toggleMobileMenu}
-            aria-label={isMobileMenuOpen ? "Close menu" : "Open menu"}
           />
- <button 
-  className='download-Button'   
-  onClick={() => window.open(cvPdf, '_blank')}
->
-  Download CV
-</button>
+        </div>
+        <div
+          className={
+            activeDarkMode === true
+              ? "dark-mode-toggle active"
+              : "dark-mode-toggle"
+          }
+          onClick={() => {
+            if (setActiveDarkMode) {
+              setActiveDarkMode(!activeDarkMode);
+            }
+            localStorage.setItem("darkMode", JSON.stringify(!activeDarkMode));
+          }}
+        >
+          <FontAwesomeIcon
+            icon={faSun}
+            style={activeDarkMode ? { opacity: 0 } : {}}
+            className="icon-sun switch-icon"
+          />
+          <FontAwesomeIcon
+            icon={faMoon}
+            style={activeDarkMode ? { opacity: 1 } : { opacity: 0 }}
+            className="icon-moon switch-icon"
+          />
         </div>
       </header>
 
       {/* Mobile Menu Overlay */}
       <div
-        className={`overlay ${isMobileMenuOpen ? 'active' : ''}`}
+        className={`overlay ${isMobileMenuOpen ? "active" : ""}`}
         onClick={closeMobileMenu}
       ></div>
 
       {/* Mobile Menu */}
-      <div className={`mobile-menu ${isMobileMenuOpen ? 'active' : ''}`}>
+      <div className={`mobile-menu ${isMobileMenuOpen ? "active" : ""}`}>
         <nav>
           <ul>
             {navLinks.map((link) => (
@@ -102,6 +132,36 @@ function Header({ activeSection }: HeaderProps) {
                 </a>
               </li>
             ))}
+            <li>
+              <div
+                className={
+                  activeDarkMode === true
+                    ? "dark-mode-toggle active"
+                    : "dark-mode-toggle"
+                }
+                onClick={() => {
+                  if (setActiveDarkMode) {
+                    setActiveDarkMode(!activeDarkMode);
+                  }
+                  localStorage.setItem(
+                    "darkMode",
+                    JSON.stringify(!activeDarkMode),
+                  );
+                }}
+                style={{ marginTop: "20px" }}
+              >
+                <FontAwesomeIcon
+                  icon={faSun}
+                  style={activeDarkMode ? { opacity: 0 } : {}}
+                  className="icon-sun switch-icon"
+                />
+                <FontAwesomeIcon
+                  icon={faMoon}
+                  style={activeDarkMode ? { opacity: 1 } : { opacity: 0 }}
+                  className="icon-moon switch-icon"
+                />
+              </div>
+            </li>
           </ul>
         </nav>
       </div>

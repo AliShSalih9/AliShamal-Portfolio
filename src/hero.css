@@ -1,531 +1,653 @@
-@import url('https://fonts.googleapis.com/css2?family=Stardos+Stencil:wght@400;700&family=Inter:wght@300;400;500;600&display=swap');
-
+@import url("https://fonts.googleapis.com/css2?family=Roboto+Condensed:ital,wght@0,100..900;1,100..900&display=swap");
 * {
-    box-sizing: border-box;
+  box-sizing: border-box;
 }
 
 .container {
-    min-height: 100vh;
-    display: flex;
-    max-width: 1400px;
-    align-items: center;
-    justify-content: center;
-    margin: 0 auto;
-    gap: 60px;
-    padding: 50px 80px;
+  min-height: 100vh;
+  display: flex;
+  max-width: 1400px;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto;
+  gap: 60px;
+  width: 100vw;
+
+  padding: 50px 80px;
+}
+.bubble {
+  position: absolute;
+  bottom: -100px; /* Start from below the viewport */
+  background-color: #ff8a4245; /* Light color for bubbles */
+  border-radius: 50%;
+  animation: rise 10s infinite; /* Looping upward animation */
+  opacity: 0.6; /* Slight transparency */
 }
 
+/* Keyframes for bubble animation */
+@keyframes rise {
+  0% {
+    transform: translateY(0);
+    opacity: 0.6;
+  }
+  100% {
+    transform: translateY(-120vh); /* Move bubbles upward */
+    opacity: 0; /* Fade out */
+  }
+}
+
+/* Randomizing bubble sizes and positions */
+.bubble:nth-child(1) {
+  width: 80px;
+  height: 80px;
+  left: 10%;
+  animation-delay: 0s;
+}
+
+.bubble:nth-child(2) {
+  width: 100px;
+  height: 100px;
+  left: 30%;
+  animation-delay: 1.5s;
+}
+
+.bubble:nth-child(3) {
+  width: 120px;
+  height: 120px;
+  left: 50%;
+  animation-delay: 3s;
+}
+
+.bubble:nth-child(4) {
+  width: 150px;
+  height: 150px;
+  left: 70%;
+  animation-delay: 2s;
+}
+
+.bubble:nth-child(5) {
+  width: 90px;
+  height: 90px;
+  left: 90%;
+  animation-delay: 4s;
+}
 .container .left-container {
-    position: relative;
+  position: relative;
 }
 
 .container .left-container img {
-    width: 450px;
-    height: auto;
-    object-fit: contain;
-    transition: transform 0.4s ease;
-    filter: drop-shadow(0 10px 30px rgba(0, 0, 0, 0.1));
+  width: 450px;
+  height: auto;
+  object-fit: contain;
+  transition: transform 0.4s ease;
+  filter: drop-shadow(0 10px 30px rgba(0, 0, 0, 0.1));
 }
 
 .container .left-container img:hover {
-    transform: translateY(-15px) scale(1.03);
-    filter: drop-shadow(0 20px 40px rgba(0, 0, 0, 0.15));
+  transform: translateY(-15px) scale(1.03);
+  filter: drop-shadow(0 20px 40px rgba(0, 0, 0, 0.15));
 }
 
 .container .right-container {
-    max-width: 100%;
+  max-width: 100%;
 }
 
 .container .right-container h2 {
-    font-family: "Stardos Stencil", serif;
-    font-size: 70px;
-    color: #C85300;
-    margin: 0 0 10px 0;
-    line-height: 1.2;
+  font-family: "Stardos Stencil", serif;
+  font-size: 70px;
+  color: var(--bg-header-color);
+  margin: 0 0 10px 0;
+  line-height: 1.2;
+}
+
+.container .right-container .hi {
+  font-family: "Stardos Stencil", serif;
+  font-size: 70px;
+  color: var(--bg-header-color);
+  margin: 0 0 10px 0;
+  line-height: 1.2;
+  display: inline-block;
+  animation: wave 4s ease-in-out infinite;
+  transform-origin: 70% 70%;
+}
+
+@keyframes wave {
+  0% {
+    transform: rotate(0deg);
+  }
+  15% {
+    transform: rotate(15deg);
+  }
+  30% {
+    transform: rotate(-10deg);
+  }
+  45% {
+    transform: rotate(10deg);
+  }
+  60% {
+    transform: rotate(-5deg);
+  }
+  75% {
+    transform: rotate(5deg);
+  }
+  100% {
+    transform: rotate(0deg);
+  }
 }
 
 .container .right-container p {
-    font-size: 22px;
-    line-height: 1.6;
-    font-family: "Inter", sans-serif;
-    color: #444;
+  font-size: 22px;
+  line-height: 1.6;
+  font-family: "Inter", sans-serif;
+  color: var(--bg-hero-color);
 }
 
 /* Skills Box */
 .skill-icon {
-    margin-top: 50px;
-    background-color: #ffe8d6;
-    padding: 25px;
-    border-radius: 16px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.06);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  margin-top: 50px;
+  background-color: var(--bg-skills);
+  padding: 25px;
+  border-radius: 16px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.06);
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease;
 }
 
 .skill-icon:hover {
-    transform: translateY(-9px);
-    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12);
+  transform: translateY(-9px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12);
 }
 
 /* Developer Stack Header */
 .header-stack {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 12px;
-    margin-bottom: 25px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  margin-bottom: 25px;
 }
 
 .header-stack h3 {
-    font-size: 32px;
-    letter-spacing: 4px;
-    font-family: "Inter", sans-serif;
-    font-weight: 800;
-    color: #333;
+  font-size: 32px;
+  letter-spacing: 4px;
+  font-family: "Inter", sans-serif;
+  font-weight: 800;
+  color: var(--bg-hero-color);
 }
 
 .stack-icon {
-    font-size: 36px;
-    color: #C85300;
-    animation: moveing 4s infinite;
+  font-size: 36px;
+  color: var(--bg-header-color);
+  animation: moveing 4s infinite;
 }
 
 @keyframes moveing {
-    25%, 75% {
-        transform: translateY(2px);
-    }
-    50%, 100% {
-        transform: translateY(-2px);
-    }
+  25%,
+  75% {
+    transform: translateY(2px);
+  }
+  50%,
+  100% {
+    transform: translateY(-2px);
+  }
 }
 
 /* Icons Row */
 .stack-cards {
-    display: flex;
-    justify-content: center;
-    gap: 25px;
-    flex-wrap: wrap;
-    margin-top: 20px;
+  display: flex;
+  justify-content: center;
+  gap: 25px;
+  flex-wrap: wrap;
+  margin-top: 20px;
 }
 
 .stack-card {
-    background: rgba(255, 255, 255, 0.06);
-    border: 1px solid rgba(255, 255, 255, 0.12);
-    border-radius: 14px;
-    width: 130px;
-    height: 130px;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    backdrop-filter: blur(10px);
-    transition: 0.3s ease;
-    cursor: pointer;
-    background-color: white;
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 14px;
+  width: 130px;
+  height: 130px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  backdrop-filter: blur(10px);
+  transition: 0.3s ease;
+  cursor: pointer;
+  background-color: var(--bg-stack-color);
 }
 
 .stack-card-icon {
-    font-size: 40px;
-    margin-bottom: 10px;
-    transition: transform 0.3s ease, color 0.3s ease;
+  font-size: 40px;
+  margin-bottom: 10px;
+  transition:
+    transform 0.3s ease,
+    color 0.3s ease;
 }
 
 .stack-card-flutter .stack-card-icon {
-    color: #02569B;
+  color: #02569b;
 }
 
 .stack-card-nodeJS .stack-card-icon {
-    color: #339933;
+  color: #339933;
 }
 
 .stack-card-laravel .stack-card-icon {
-    color: #FF2D20;
+  color: #ff2d20;
 }
 
 .stack-card-react .stack-card-icon {
-    color: #61DAFB;
+  color: #61dafb;
 }
 
 .stack-card-mySql .stack-card-icon {
-    color: #00758F;
+  color: #00758f;
 }
 
 .stack-card-firebase .stack-card-icon {
-    color: #FFCA28;
+  color: #ffca28;
 }
 
 .stack-card p {
-    font-size: 18px;
-    font-weight: 600;
-    transition: color 0.3s ease;
+  font-size: 18px;
+  font-weight: 600;
+  transition: color 0.3s ease;
 }
 
 .stack-card:hover {
-    transform: translateY(-8px) scale(1.05);
-    border-color: #C85300;
-    box-shadow: 0px 4px 24px #C85300;
+  transform: translateY(-8px) scale(1.05);
+  border-color: var(--bg-header-color);
+  box-shadow: 0px 4px 24px var(--bg-header-color);
 }
 
 .stack-card:hover .stack-card-icon {
-    color: #C85300;
-    transform: scale(1.1);
+  color: var(--bg-header-color);
+  transform: scale(1.1);
 }
 
 .stack-card:hover p {
-    color: #C85300;
+  color: var(--bg-header-color);
 }
 
 .skill-icon a {
-    margin-right: 15px;
-    font-size: 28px;
-    color: #555;
-    transition: 0.3s ease;
-    display: inline-block;
+  margin-right: 15px;
+  font-size: 28px;
+  color: #555;
+  transition: 0.3s ease;
+  display: inline-block;
 }
 
 .skill-icon a:hover {
-    color: #C85300;
-    transform: scale(1.1);
+  color: #c85300;
+  transform: scale(1.1);
 }
 
 /* Tablet - Large (1024px and below) */
 @media (max-width: 1024px) {
-    .container {
-        gap: 50px;
-        padding: 40px 60px;
-    }
+  .container {
+    gap: 50px;
+    padding: 40px 60px;
+  }
 
-    .container .left-container img {
-        width: 380px;
-    }
+  .container .left-container img {
+    width: 380px;
+  }
 
-    .container .right-container h2 {
-        font-size: 60px;
-    }
+  .container .right-container h2 {
+    font-size: 60px;
+  }
 
-    .container .right-container p {
-        font-size: 20px;
-    }
+  .container .right-container p {
+    font-size: 20px;
+  }
 
-    .header-stack h3 {
-        font-size: 28px;
-        letter-spacing: 3px;
-    }
+  .header-stack h3 {
+    font-size: 28px;
+    letter-spacing: 3px;
+  }
 
-    .stack-icon {
-        font-size: 32px;
-    }
+  .stack-icon {
+    font-size: 32px;
+  }
 
-    .stack-card {
-        width: 120px;
-        height: 120px;
-    }
+  .stack-card {
+    width: 120px;
+    height: 120px;
+  }
 
-    .stack-card-icon {
-        font-size: 36px;
-    }
+  .stack-card-icon {
+    font-size: 36px;
+  }
 
-    .stack-card p {
-        font-size: 16px;
-    }
+  .stack-card p {
+    font-size: 16px;
+  }
 }
 
 /* Tablet - Medium (900px and below) */
 @media (max-width: 900px) {
-    .container {
-        flex-direction: column;
-        text-align: center;
-        padding: 40px 40px;
-        gap: 40px;
-    }
+  .container {
+    flex-direction: column;
+    text-align: center;
+    padding: 40px 40px;
+    gap: 40px;
+  }
 
-    .container .left-container img {
-        width: 350px;
-    }
+  .container .left-container img {
+    width: 350px;
+  }
 
-    .container .right-container h2 {
-        font-size: 55px;
-    }
+  .container .right-container h2 {
+    font-size: 55px;
+  }
 
-    .container .right-container p {
-        font-size: 19px;
-    }
+  .container .right-container p {
+    font-size: 19px;
+  }
 
-    .skill-icon {
-        margin-top: 40px;
-    }
+  .skill-icon {
+    margin-top: 40px;
+  }
 
-    .stack-cards {
-        gap: 20px;
-    }
+  .stack-cards {
+    gap: 20px;
+  }
 }
 
 /* Tablet - Small (768px and below) */
 @media (max-width: 768px) {
-    .container {
-        padding: 35px 30px;
-        gap: 35px;
-    }
+  .container {
+    padding: 35px 30px;
+    gap: 35px;
+  }
 
-    .container .left-container img {
-        width: 320px;
-    }
+  .container .left-container img {
+    width: 320px;
+  }
 
-    .container .right-container h2 {
-        font-size: 48px;
-    }
+  .container .right-container h2 {
+    font-size: 48px;
+  }
 
-    .container .right-container p {
-        font-size: 18px;
-    }
+  .container .right-container p {
+    font-size: 18px;
+  }
 
-    .skill-icon {
-        padding: 20px;
-        margin-top: 35px;
-    }
+  .skill-icon {
+    padding: 20px;
+    margin-top: 35px;
+  }
 
-    .header-stack {
-        gap: 10px;
-        margin-bottom: 20px;
-    }
+  .header-stack {
+    gap: 10px;
+    margin-bottom: 20px;
+  }
 
-    .header-stack h3 {
-        font-size: 26px;
-        letter-spacing: 2px;
-    }
+  .header-stack h3 {
+    font-size: 26px;
+    letter-spacing: 2px;
+  }
 
-    .stack-icon {
-        font-size: 30px;
-    }
+  .stack-icon {
+    font-size: 30px;
+  }
 
-    .stack-card {
-        width: 110px;
-        height: 110px;
-    }
+  .stack-card {
+    width: 110px;
+    height: 110px;
+  }
 
-    .stack-card-icon {
-        font-size: 34px;
-        margin-bottom: 8px;
-    }
+  .stack-card-icon {
+    font-size: 34px;
+    margin-bottom: 8px;
+  }
 
-    .stack-card p {
-        font-size: 15px;
-    }
+  .stack-card p {
+    font-size: 15px;
+  }
 
-    .skill-icon a {
-        font-size: 26px;
-        margin-right: 12px;
-    }
+  .skill-icon a {
+    font-size: 26px;
+    margin-right: 12px;
+  }
 }
 
 /* Mobile - Large (600px and below) */
 @media (max-width: 600px) {
-    .container {
-        padding: 30px 20px;
-        gap: 30px;
-    }
+  .container {
+    padding: 30px 20px;
+    gap: 30px;
+  }
 
-    .container .left-container img {
-        width: 280px;
-        border-radius: 16px;
-    }
+  .container .left-container img {
+    width: 280px;
+    border-radius: 16px;
+  }
 
-    .container .right-container h2 {
-        font-size: 42px;
-    }
+  .container .right-container h2 {
+    font-size: 42px;
+  }
 
-    .container .right-container p {
-        font-size: 17px;
-        line-height: 1.5;
-    }
+  .container .right-container p {
+    font-size: 17px;
+    line-height: 1.5;
+  }
 
-    .skill-icon {
-        padding: 18px;
-        margin-top: 30px;
-        border-radius: 14px;
-    }
+  .skill-icon {
+    padding: 18px;
+    margin-top: 30px;
+    border-radius: 14px;
+  }
 
-    .header-stack {
-        gap: 8px;
-        margin-bottom: 18px;
-        flex-direction: column;
-    }
+  .header-stack {
+    gap: 8px;
+    margin-bottom: 18px;
+    flex-direction: column;
+  }
 
-    .header-stack h3 {
-        font-size: 24px;
-        letter-spacing: 1.5px;
-    }
+  .header-stack h3 {
+    font-size: 24px;
+    letter-spacing: 1.5px;
+  }
 
-    .stack-icon {
-        font-size: 28px;
-    }
+  .stack-icon {
+    font-size: 28px;
+  }
 
-    .stack-cards {
-        gap: 15px;
-        margin-top: 15px;
-    }
+  .stack-cards {
+    gap: 15px;
+    margin-top: 15px;
+  }
 
-    .stack-card {
-        width: 100px;
-        height: 100px;
-        border-radius: 12px;
-    }
+  .stack-card {
+    width: 100px;
+    height: 100px;
+    border-radius: 12px;
+  }
 
-    .stack-card-icon {
-        font-size: 30px;
-        margin-bottom: 6px;
-    }
+  .stack-card-icon {
+    font-size: 30px;
+    margin-bottom: 6px;
+  }
 
-    .stack-card p {
-        font-size: 14px;
-    }
+  .stack-card p {
+    font-size: 14px;
+  }
 
-    .skill-icon a {
-        font-size: 24px;
-        margin-right: 10px;
-    }
+  .skill-icon a {
+    font-size: 24px;
+    margin-right: 10px;
+  }
 }
 
 /* Mobile - Small (480px and below) */
 @media (max-width: 480px) {
-    .container {
-        padding: 25px 15px;
-        gap: 25px;
-    }
+  .container {
+    padding: 25px 15px;
+    gap: 25px;
+  }
 
-    .container .left-container img {
-        width: 250px;
-        border-radius: 14px;
-    }
+  .container .left-container img {
+    width: 250px;
+    border-radius: 14px;
+  }
 
-    .container .right-container h2 {
-        font-size: 36px;
-    }
+  .container .right-container h2 {
+    font-size: 36px;
+  }
 
-    .container .right-container p {
-        font-size: 16px;
-    }
+  .container .right-container p {
+    font-size: 16px;
+  }
 
-    .skill-icon {
-        padding: 16px;
-        margin-top: 25px;
-        border-radius: 12px;
-    }
+  .skill-icon {
+    padding: 16px;
+    margin-top: 25px;
+    border-radius: 12px;
+  }
 
-    .header-stack h3 {
-        font-size: 22px;
-        letter-spacing: 1px;
-    }
+  .header-stack h3 {
+    font-size: 22px;
+    letter-spacing: 1px;
+  }
 
-    .stack-icon {
-        font-size: 26px;
-    }
+  .stack-icon {
+    font-size: 26px;
+  }
 
-    .stack-cards {
-        gap: 12px;
-    }
+  .stack-cards {
+    gap: 12px;
+  }
 
-    .stack-card {
-        width: 90px;
-        height: 90px;
-        border-radius: 10px;
-    }
+  .stack-card {
+    width: 90px;
+    height: 90px;
+    border-radius: 10px;
+  }
 
-    .stack-card-icon {
-        font-size: 28px;
-        margin-bottom: 5px;
-    }
+  .stack-card-icon {
+    font-size: 28px;
+    margin-bottom: 5px;
+  }
 
-    .stack-card p {
-        font-size: 13px;
-    }
+  .stack-card p {
+    font-size: 13px;
+  }
 
-    .stack-card:hover {
-        transform: translateY(-6px) scale(1.03);
-    }
+  .stack-card:hover {
+    transform: translateY(-6px) scale(1.03);
+  }
 
-    .skill-icon a {
-        font-size: 22px;
-        margin-right: 8px;
-    }
+  .skill-icon a {
+    font-size: 22px;
+    margin-right: 8px;
+  }
 }
 
 /* Mobile - Extra Small (360px and below) */
 @media (max-width: 360px) {
-    .container {
-        padding: 20px 12px;
-        gap: 20px;
-    }
+  .container {
+    padding: 20px 12px;
+    gap: 20px;
+  }
 
-    .container .left-container img {
-        width: 220px;
-    }
+  .container .left-container img {
+    width: 220px;
+  }
 
-    .container .right-container h2 {
-        font-size: 32px;
-    }
+  .container .right-container h2 {
+    font-size: 32px;
+  }
 
-    .container .right-container p {
-        font-size: 15px;
-    }
+  .container .right-container p {
+    font-size: 15px;
+  }
 
-    .skill-icon {
-        padding: 14px;
-        margin-top: 20px;
-    }
+  .skill-icon {
+    padding: 14px;
+    margin-top: 20px;
+  }
 
-    .header-stack h3 {
-        font-size: 20px;
-    }
+  .header-stack h3 {
+    font-size: 20px;
+  }
 
-    .stack-icon {
-        font-size: 24px;
-    }
+  .stack-icon {
+    font-size: 24px;
+  }
 
-    .stack-cards {
-        gap: 10px;
-    }
+  .stack-cards {
+    gap: 10px;
+  }
 
-    .stack-card {
-        width: 80px;
-        height: 80px;
-    }
+  .stack-card {
+    width: 80px;
+    height: 80px;
+  }
 
-    .stack-card-icon {
-        font-size: 24px;
-    }
+  .stack-card-icon {
+    font-size: 24px;
+  }
 
-    .stack-card p {
-        font-size: 12px;
-    }
+  .stack-card p {
+    font-size: 12px;
+  }
 
-    .skill-icon a {
-        font-size: 20px;
-        margin-right: 6px;
-    }
+  .skill-icon a {
+    font-size: 20px;
+    margin-right: 6px;
+  }
 }
 
 /* Landscape mode optimization for mobile */
 @media (max-height: 600px) and (orientation: landscape) {
-    .container {
-        min-height: auto;
-        padding: 30px 20px;
-    }
+  .container {
+    min-height: auto;
+    padding: 30px 20px;
+  }
 
-    .container .left-container img {
-        width: 250px;
-    }
+  .container .left-container img {
+    width: 250px;
+  }
 
-    .container .right-container h2 {
-        font-size: 36px;
-    }
+  .container .right-container h2 {
+    font-size: 36px;
+  }
 
-    .skill-icon {
-        margin-top: 20px;
-        padding: 15px;
-    }
+  .skill-icon {
+    margin-top: 20px;
+    padding: 15px;
+  }
 
-    .stack-card {
-        width: 80px;
-        height: 80px;
-    }
+  .stack-card {
+    width: 80px;
+    height: 80px;
+  }
+}
+.stack-item-circle {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+}
+
+.stack-icon {
+  font-size: 36px;
+  color: #fff;
+  background: var(--bg-header-color);
+  padding: 20px;
+
+  border-radius: 50%;
+  transition: transform 0.3s;
+}
+
+.stack-icon:hover {
+  transform: scale(1.2);
+}
+
+.stack-item-circle h3 {
+  margin: 0;
+  font-size: 1.2rem;
 }
