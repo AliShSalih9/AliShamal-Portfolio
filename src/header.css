@@ -2,38 +2,31 @@
 .header {
   position: fixed;
   top: 20px;
-  left: 50%; /* position left at 50% of viewport */
-  transform: translateX(-50%); /* center it horizontally */
-
-  width: 90vw; /* or max-width: 1450px */
+  left: 50%;
+  transform: translateX(-50%);
+  width: 90vw;
   max-width: 1450px;
   height: 80px;
   padding: 0 25px;
-
   display: flex;
   justify-content: space-between;
   align-items: center;
   border-radius: 10px;
-  z-index: 1000;
-
+  z-index: 10000;
   background: var(--bg-header);
   backdrop-filter: blur(24px);
-  -webkit-backdrop-filter: blur(10px);
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
 }
+
 .header .logo-nav {
   display: flex;
   align-items: center;
-  gap: 40px;
-}
-.apperance {
-  display: flex;
-  align-items: center;
-  gap: 20px;
+  gap: clamp(16px, 3vw, 40px); /* Responsive gap scaling */
 }
 
 .logo {
   display: flex;
+  align-items: center;
   margin: 15px;
   gap: 10px;
   color: var(--bg-navigation-color);
@@ -43,30 +36,35 @@
 
 .logo .logo-icon {
   color: var(--bg-header-color);
+  transition: transform 0.3s ease; /* Smooth transition for logo hover */
 }
+
 .logo:hover .logo-icon {
   transform: rotate(-15deg);
-  transition: transform 0.3s;
 }
 
 .main-menu {
   display: flex;
-  margin-left: 120px;
+  margin-left: clamp(20px, 8vw, 120px); /* Responsive margin */
 }
+
 .main-menu ul {
   display: flex;
-  gap: 25px;
+  gap: clamp(12px, 2vw, 25px); /* Responsive gap */
   list-style: none;
   padding: 0;
-  font-size: 20px;
+  font-size: clamp(15px, 1.3vw, 20px); /* Responsive font size */
   font-weight: 500;
   margin: 0;
 }
+
 .main-menu ul a {
   text-decoration: none;
   position: relative;
   color: var(--bg-header-text-color);
+  white-space: nowrap; /* Prevent wrapping */
 }
+
 .main-menu ul a::after {
   content: "";
   position: absolute;
@@ -75,16 +73,23 @@
   width: 0%;
   height: 2px;
   background: #c85300;
-  transition: 0.3s;
+  transition: width 0.3s ease; /* Underline effect on hover */
 }
+
 .main-menu ul a:hover::after,
 .main-menu ul a.active::after {
   width: 100%;
 }
 
-/* ====== GLOBAL STYLES & COLOR SCHEME ====== */
-/* Overlay */
+/* ====== OVERLAY ====== */
 .overlay {
+  display: none; /* Hidden by default */
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: 1000;
+  opacity: 0;
+  transition: opacity 0.3s ease;
 }
 
 .overlay.active {
@@ -92,53 +97,28 @@
   opacity: 1;
 }
 
-/* Mobile menu container */
+/* ====== MOBILE MENU ====== */
 .mobile-menu {
-}
-.list-item a {
-  width: 100%;
-}
-
-/* Show mobile menu when active */
-.mobile-menu.active {
-}
-.apperance {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 20px;
-  width: 100%;
-  background-color: var(--bg-project-color);
-  padding: 10px 20px;
-  border-radius: 12px;
-}
-.icon-apperance {
-  font-size: 18px;
-  color: var(--bg-header-color);
-}
-/* Menu items */
-.mobile-menu {
-  display: none;
+  display: none; /* Hidden by default */
   position: fixed;
   top: 50%;
   left: 50%;
-  transform: translate(-50%, -50%);
-  width: 100vw;
-  max-width: 400px;
-  background: white;
+  transform: translate(-50%, -60%); /* Start position for animation */
+  width: min(90vw, 400px); /* Responsive width */
+  background: var(--bg-background, white);
   border-radius: 15px;
   padding: 1rem 0;
   z-index: 1001;
   box-shadow: 0 20px 50px rgba(0, 0, 0, 0.3);
   backdrop-filter: blur(10px);
-  animation: slideInFromCenter 0.4s cubic-bezier(0.23, 1, 0.32, 1);
 }
+
 .mobile-menu.active {
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  background-color: var(--bg-background);
+  animation: slideInFromCenter 0.4s cubic-bezier(0.23, 1, 0.32, 1) forwards;
 }
 
 .mobile-menu.active ul {
@@ -146,14 +126,26 @@
   padding: 0;
   margin: 0;
   text-align: center;
+  width: 100%;
 }
 
 .mobile-menu.active ul li {
   margin: 1rem 0;
   opacity: 0;
-
   animation: fadeInUp 0.6s ease-out forwards;
-  position: relative;
+  position: relative; /* For the separator */
+}
+
+.apperance {
+  margin-bottom: 0;
+  display:flex;
+  justify-content: space-between;
+  background:var(--bg-project-color);
+  padding: 0.5rem 1rem;
+  border-radius: 8px;
+
+
+ 
 }
 .mobile-menu.active ul li:not(:last-child)::before {
   content: "";
@@ -167,32 +159,17 @@
 }
 
 .mobile-menu.active ul li:last-child {
-  margin-bottom: 0;
   margin-top: 25px;
-  width: 250px;
   margin-bottom: 64px;
-  position: none;
 }
+
 .mobile-menu.active ul li:first-child {
   margin-top: 0;
 }
-.mobile-menu.a .mobile-menu.active ul li:nth-child(1) {
-  animation-delay: 0.1s;
-}
-.mobile-menu.active ul li:nth-child(2) {
-  animation-delay: 0.15s;
-}
-.mobile-menu.active ul li:nth-child(3) {
-  animation-delay: 0.2s;
-}
-.mobile-menu.active ul li:nth-child(4) {
-  animation-delay: 0.25s;
-}
-.mobile-menu.active ul li:nth-child(5) {
-  animation-delay: 0.3s;
-}
-.mobile-menu.active ul li:nth-child(6) {
-  animation-delay: 0.35s;
+
+/* Animation delays */
+.mobile-menu.active ul li:nth-child(n) {
+  animation-delay: calc(0.1s * var(--i, 1));
 }
 
 .mobile-menu.active ul li a {
@@ -205,33 +182,34 @@
   display: block;
   border-radius: 16px;
   transition: color 0.3s ease;
-  position: relative;
-  overflow: hidden; /* important */
 }
 
-/* 🔥 Add this part */
-.mobile-menu.active ul li a:hover::before {
-  transform: scaleX(1);
+/* Button Styles */
+.mobile-menu .close-btn {
+  position: absolute;
+  top: 1.5rem;
+  right: 1.5rem;
+  width: 50px;
+  height: 50px;
+  font-size: 2rem;
+  background: rgba(128, 128, 128, 0.15);
+  border: 1px solid rgba(128, 128, 128, 0.3);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.4s ease;
+  z-index: 1002;
+  color: var(--bg-subColor, #333);
 }
 
-/* Optional text color change */
-.mobile-menu.active ul li a:hover {
-  color: #fff;
+.mobile-menu .close-btn:hover {
+  background: rgba(200, 83, 0, 0.2);
+  color: #c85300;
 }
 
-.mobile-menu.active ul li a.active {
-  color: #ff7a00;
-}
-
-.mobile-menu.active ul li {
-  margin: 1rem 0;
-
-  opacity: 0;
-  animation: fadeInUp 0.6s ease-out forwards;
-}
-
-/* ===== DARK MODE TOGGLE ===== */
-
+/* ====== DARK MODE TOGGLE ====== */
 .dark-mode-toggle {
   width: 45px;
   height: 22px;
@@ -241,18 +219,16 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-
   padding: 0 2px;
   cursor: pointer;
   transition: background 0.3s ease;
 }
 
-/* Active background */
 .dark-mode-toggle.active {
   background: #0f172a;
 }
 
-/* Sliding Circle */
+/* Dark Mode Indicator */
 .dark-mode-toggle::before {
   content: "";
   position: absolute;
@@ -262,97 +238,117 @@
   height: 18px;
   background: #ffffff;
   border-radius: 50%;
-  transition: 0.3s ease;
-  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
+  transition: left 0.3s ease;
 }
 
-/* Move circle when active */
 .dark-mode-toggle.active::before {
   left: 25px;
 }
 
-/* Icons */
+/* Hiding elements based on dark mode */
 .switch-icon {
   font-size: 12px;
   z-index: 1;
-  transition: 0.3s ease;
+  transition: opacity 0.3s ease;
 }
 
 .icon-sun {
-  color: #facc15;
+  color: #facc15; /* Sun color */
 }
 
 .icon-moon {
-  color: #60a5fa;
-}
-.icon-menu.open {
-  transform: rotate(180deg);
-  transition: transform 0.3s ease;
+  color: #60a5fa; /* Moon color */
 }
 
-/* Default icon */
-.icon-menu {
-  transform: rotate(0deg);
-  transition: transform 0.3s ease;
-}
-
-/* Fade inactive icon */
+/* Icon visibility control */
 .dark-mode-toggle.active .icon-sun {
-  opacity: 0.3;
+  opacity: 0.3; /* Make sun icon less visible */
 }
 
 .dark-mode-toggle:not(.active) .icon-moon {
-  opacity: 0.3;
+  opacity: 0.3; /* Make moon icon less visible */
 }
+
+/* ====== HAMBURGER ICON ====== */
+.icon-menu {
+  transform: rotate(0deg);
+  transition: transform 0.3s ease;
+  display: none; /* Hidden on desktop */
+  color: #c85300;
+  font-size: 24px;
+  cursor: pointer;
+}
+
+.icon-menu.open {
+  transform: rotate(180deg);
+}
+
+/* ====== LEFT BUTTON (Desktop Hidden) ====== */
 .left-button {
   display: none;
 }
-/* ====== MOBILE & TABLET FIX ====== */
+
+/* ====== BREAKPOINT: LARGE TABLETS (900px–1200px) ====== */
 @media (max-width: 1200px) {
   .main-menu {
-    display: none;
+    display: none; /* Hide main menu on tablet */
   }
   .left-button {
-    display: flex;
+    display: flex; /* Show left button */
   }
-  .dark-mode-toggle {
-    display: none;
-  }
-  .download-Button {
-    display: none;
+  .dark-mode-toggle, .download-Button {
+    display: none; /* Hide dark mode and download button */
   }
   .icon-menu {
-    display: block;
-    color: #c85300;
-    font-size: 24px;
-    cursor: pointer;
-  }
-
-  /* Overlay for mobile menu */
-
-  /* Mobile menu container */
-
-  .mobile-menu.active .close-btn {
-    position: absolute;
-    top: 1.5rem;
-    right: 1.5rem;
-    width: 50px;
-    height: 50px;
-    font-size: 2rem;
-    background: rgba(255, 255, 255, 0.15);
-    border: 1px solid rgba(255, 255, 255, 0.3);
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    cursor: pointer;
-    backdrop-filter: blur(10px);
-    transition: all 0.4s ease;
-    z-index: 1001;
+    display: block; /* Show hamburger icon */
   }
 }
 
-/* ====== MOBILE ANIMATIONS ====== */
+/* ====== BREAKPOINT: SMALL TABLETS (600px–900px) ====== */
+@media (max-width: 900px) {
+  .header {
+    height: 70px;
+    padding: 0 20px; /* Adjust padding */
+  }
+}
+
+/* ====== BREAKPOINT: MOBILE (max 480px) ====== */
+@media (max-width: 480px) {
+  .header {
+    top: 10px; /* Less top offset */
+    width: 95vw; /* Edge-to-edge on mobile */
+    height: 60px;
+    padding: 0 1rem; /* Adjust padding */
+    border-radius: 8px;
+  }
+
+  .logo h1 {
+    font-size: 1.25rem; /* Smaller logo font */
+  }
+
+  /* Mobile menu adjustments */
+  .mobile-menu {
+    width: 100%;
+    max-width: 100%;
+    border-radius: 0;
+    top: 0;
+    left: 0;
+    height: 100dvh; /* Full height */
+    overflow-y: auto;
+  }
+
+  .mobile-menu.active {
+    transform: none;
+    animation: slideInFromBottom 0.4s cubic-bezier(0.23, 1, 0.32, 1) forwards;
+  }
+
+  .mobile-menu.active ul li a {
+    font-size: 1.2rem; /* Adjust mobile menu font size */
+    padding: 0.85rem 1.5rem; /* Adjust mobile menu padding */
+  }
+}
+
+/* ====== ANIMATIONS ====== */
 @keyframes slideInFromCenter {
   from {
     opacity: 0;
@@ -363,6 +359,19 @@
     transform: translate(-50%, -50%);
   }
 }
+
+/* Animation for mobile sliding in from bottom */
+@keyframes slideInFromBottom {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
 @keyframes fadeInUp {
   from {
     opacity: 0;
@@ -374,50 +383,50 @@
   }
 }
 
-/* Smooth scroll behavior */
-@media (max-width: 480px) {
-  .header {
-    padding: 0.75rem 1rem;
-  }
-
-  .logo h1 {
-    font-size: 1.25rem;
-  }
-
-  .mobile-menu {
-    width: 100%;
-    max-width: 100%;
-  }
-
-  .dark-mode-toggle {
-    padding: 0.35rem 0.5rem;
-  }
-}
-
-/* ═══ ACCESSIBILITY - REDUCED MOTION ═══ */
+/* ====== ACCESSIBILITY: REDUCED MOTION ====== */
 @media (prefers-reduced-motion: reduce) {
   .header,
+  .logo .logo-icon,
   .main-menu a,
   .main-menu a::after,
   .dark-mode-toggle,
+  .dark-mode-toggle::before,
   .switch-icon,
-  .mobile-menu-btn,
+  .icon-menu,
   .overlay,
   .mobile-menu,
-  .mobile-menu a {
-    transition: none;
-    animation: none;
+  .mobile-menu.active ul li,
+  .mobile-menu.active ul li a,
+  .mobile-menu.active ul li a::before,
+  .mobile-menu .close-btn {
+    transition: none !important; /* Remove transitions in reduce motion */
+    animation: none !important; /* Disable animations */
+  }
+
+  .mobile-menu.active ul li {
+    opacity: 1; /* Ensure visibility without animation */
   }
 }
 
-/* ═══ HIGH CONTRAST MODE ═══ */
+/* ====== HIGH CONTRAST MODE ====== */
 @media (prefers-contrast: high) {
   .header {
+    border: 2px solid currentColor; /* High contrast border on header */
     border-bottom-width: 2px;
   }
 
-  .dark-mode-toggle,
-  .mobile-menu-btn {
-    border: 2px solid currentColor;
+  .dark-mode-toggle {
+    border: 2px solid currentColor; /* High contrast border on dark mode toggle */
+  }
+
+  .icon-menu {
+    border: 2px solid currentColor; /* High contrast border on menu icon */
+    border-radius: 4px;
+    padding: 2px;
+  }
+
+  .mobile-menu.active ul li a:hover {
+    outline: 2px solid #ff7a00; /* Outline on hover in high contrast */
+    outline-offset: 2px;
   }
 }

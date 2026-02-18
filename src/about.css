@@ -13,8 +13,11 @@
 
 /* About Title */
 .about-title {
-  font-size: 2.5rem;
-  color: var(--bg-header-text-color);
+  font-family: "Stardos Stencil", serif;
+  font-size: 30px;
+  margin-bottom: 15px;
+  max-width: 1300px;
+  color: var(--bg-hero-color);
   background-image: linear-gradient(
     to right,
     #ff8c42 0%,
@@ -47,10 +50,9 @@
 /* About Card */
 .about-card {
   background-color: var(--bg-project-color);
-  height: 150px;
-  width: 100%; /* fill column */
-  max-width: 250px; /* optional max width */
-  aspect-ratio: 1 / 1; /* make it square */
+  width: 100%;
+  max-width: 250px;
+  aspect-ratio: 1 / 1; /* keep square */
   padding: 20px;
   border-radius: 12px;
   box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
@@ -93,6 +95,15 @@
   .about-cards {
     grid-template-columns: 1fr 1fr; /* stack cards vertically */
     gap: 15px;
+  }
+  .about-description 
+  {
+    margin-top: 20px;
+  font-size: 0.69rem;
+  color: var(--bg-color);
+  max-width: 800px;
+  text-align: justify;
+  line-height: 1.6;
   }
 }
 

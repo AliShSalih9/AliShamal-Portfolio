@@ -92,7 +92,7 @@
 .exp-details {
   margin-top: 5px;
   font-size: 16px;
-  color: va;
+  color: var(--bg-color); /* ✅ correct */
   width: 100%;
   line-height: 1.6;
 }

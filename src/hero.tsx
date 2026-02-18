@@ -10,7 +10,7 @@ import {
   faServer,
 } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import heroImage from "./assets/hero.png";
+import heroImage from "../public/hero.png";
 import "./hero.css";
 
 function Hero() {

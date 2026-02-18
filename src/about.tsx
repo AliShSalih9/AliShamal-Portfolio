@@ -9,12 +9,12 @@ function About() {
       value: "Applications",
     },
     {
-      title: "🚀 Goal",
-      value: "Innovation",
-    },
-    {
       title: "💻 Stack",
       value: "Flutter",
+    },
+    {
+      title: "💼 Status",
+      value: "Open to Work",
     },
   ];
 

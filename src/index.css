@@ -1,9 +1,8 @@
-
 @import url('https://fonts.googleapis.com/css2?family=Roboto+Condensed:ital,wght@0,100..900;1,100..900&display=swap');
+
 :root {
   /* Typography */
   font-family:
- 'Roboto Condensed',
     system-ui,
     -apple-system,
     BlinkMacSystemFont,
@@ -50,7 +49,6 @@
 
   /* Dark Mode Colors */
   --bg-header-color: #ff8c42;
-  --bg-color: #f2f2f2;
   --bg-background: #141414;
   --bg-header: rgba(2, 2, 2, 0.85);
   --bg-navigation-color: #f2f2f2;
@@ -65,18 +63,66 @@
   /* Apply background */
   background: var(--bg-background);
 }
+
 html {
   scroll-behavior: smooth;
 }
+
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+}
 
- }
- html, body {
+html, body {
   overflow-x: hidden;   /* 🚫 stop horizontal scroll */
   overflow-y: auto;     /* ✅ allow vertical scroll */
 }
 
+.container {
+  max-width: 1200px;
+  width: 100%; 
+  margin: 0 auto; /* Center the container */
+  padding: 1rem; /* Add padding for spacing */
+}
 
+/* Flexbox layout for items */
+.flex-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+/* Example flex item */
+.flex-item {
+  flex: 1 1 300px; /* Grow, shrink, and base width */
+  margin: 0.5rem; /* Space between items */
+}
+
+/* Responsive Typography */
+body {
+  font-size: 16px; /* Default font size */
+}
+
+/* Media Queries for Responsive Design */
+@media (max-width: 768px) {
+  body {
+    font-size: 14px; /* Tablet font size */
+  }
+
+  .flex-item {
+    flex: 1 1 100%; /* Stack items on smaller screens */
+  }
+}
+
+@media (max-width: 480px) {
+  body {
+    font-size: 12px; /* Mobile font size */
+  }
+
+  .flex-item {
+    margin: 0.25rem; /* Smaller margins for mobile */
+  }
+}
+
+ 
