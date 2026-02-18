@@ -1,10 +1,8 @@
 import {
   faBars,
-  faList,
   faMinus,
   faMoon,
   faSun,
-  faTimes,
 } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { useEffect, useState } from "react";
@@ -122,7 +120,7 @@ function Header({
         <nav>
           <ul>
             {navLinks.map((link) => (
-              <li key={`mobile-${link.id}`}>
+              <li key={`mobile-${link.id}`} className="list-item">
                 <a
                   href={link.href}
                   className={activePage === link.id ? "active" : ""}
@@ -132,34 +130,35 @@ function Header({
                 </a>
               </li>
             ))}
+
             <li>
-              <div
-                className={
-                  activeDarkMode === true
-                    ? "dark-mode-toggle active"
-                    : "dark-mode-toggle"
-                }
-                onClick={() => {
-                  if (setActiveDarkMode) {
-                    setActiveDarkMode(!activeDarkMode);
+              <div className="apperance">
+                <div className="icon-apperance">Appearance</div>
+                <div
+                  className={
+                    activeDarkMode === true ? "dark-mode active" : "dark-mode"
                   }
-                  localStorage.setItem(
-                    "darkMode",
-                    JSON.stringify(!activeDarkMode),
-                  );
-                }}
-                style={{ marginTop: "20px" }}
-              >
-                <FontAwesomeIcon
-                  icon={faSun}
-                  style={activeDarkMode ? { opacity: 0 } : {}}
-                  className="icon-sun switch-icon"
-                />
-                <FontAwesomeIcon
-                  icon={faMoon}
-                  style={activeDarkMode ? { opacity: 1 } : { opacity: 0 }}
-                  className="icon-moon switch-icon"
-                />
+                  onClick={() => {
+                    if (setActiveDarkMode) {
+                      setActiveDarkMode(!activeDarkMode);
+                    }
+                    localStorage.setItem(
+                      "darkMode",
+                      JSON.stringify(!activeDarkMode),
+                    );
+                  }}
+                >
+                  <FontAwesomeIcon
+                    icon={faSun}
+                    style={activeDarkMode ? { opacity: 0 } : {}}
+                    className="icon-sun switch-icon"
+                  />
+                  <FontAwesomeIcon
+                    icon={faMoon}
+                    style={activeDarkMode ? { opacity: 1 } : { opacity: 0 }}
+                    className="icon-moon switch-icon"
+                  />
+                </div>
               </div>
             </li>
           </ul>
