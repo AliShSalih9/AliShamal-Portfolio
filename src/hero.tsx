@@ -10,8 +10,8 @@ import {
   faServer,
 } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import heroImage from "../public/hero.png";
 import "./hero.css";
+import heroImage from "/hero.png";
 
 function Hero() {
   return (
@@ -24,7 +24,13 @@ function Hero() {
         <div className="bubble"></div>
 
         <div className="left-container">
-          <img src={heroImage} alt="profile" />
+          <img
+            src={heroImage}
+            alt="Ali Shamal - Software Engineer"
+            loading="eager"
+            width="450"
+            height="450"
+          />
         </div>
 
         <div className="right-container">
