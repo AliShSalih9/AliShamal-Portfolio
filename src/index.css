@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Roboto+Condensed:ital,wght@0,100..900;1,100..900&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Roboto+Condensed:ital,wght@0,100..900;1,100..900&display=swap");
 
 :root {
   /* Typography */
@@ -39,7 +39,6 @@
   --bg-service-color: linear-gradient(135deg, #6c2f00, #a04500, #d4824a);
 
   /* Apply background */
-  background: var(--bg-background);
 }
 
 .dark {
@@ -59,9 +58,9 @@
   --bg-project-color: #333;
   --bg-subColor: #aaa;
   --bg-service-color: linear-gradient(135deg, #f4f4f4, #dc744b, #4a2f20);
+  background: var(--bg-background); /* Default font size */
 
   /* Apply background */
-  background: var(--bg-background);
 }
 
 html {
@@ -74,14 +73,21 @@ html {
   box-sizing: border-box;
 }
 
-html, body {
-  overflow-x: hidden;   /* 🚫 stop horizontal scroll */
-  overflow-y: auto;     /* ✅ allow vertical scroll */
+html,
+body {
+  overflow-x: hidden; /* 🚫 stop horizontal scroll */
+  overflow-y: auto; /* ✅ allow vertical scroll */
+  height: 100%;
+  background: var(--bg-background);
+}
+.box {
+  min-height: 140vh;
+  background: var(--bg-background);
 }
 
 .container {
   max-width: 1200px;
-  width: 100%; 
+  width: 100%;
   margin: 0 auto; /* Center the container */
   padding: 1rem; /* Add padding for spacing */
 }
@@ -101,7 +107,12 @@ html, body {
 
 /* Responsive Typography */
 body {
-  font-size: 16px; /* Default font size */
+  font-size: 16px;
+  margin: 0;
+  padding: 0;
+  min-height: 100vh;
+  overflow-x: hidden;
+  background: var(--bg-background); /* Default font size */
 }
 
 /* Media Queries for Responsive Design */
@@ -124,5 +135,3 @@ body {
     margin: 0.25rem; /* Smaller margins for mobile */
   }
 }
-
- 

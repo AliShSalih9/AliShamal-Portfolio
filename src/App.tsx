@@ -50,7 +50,7 @@ function App() {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
-  const [activeDarkMode, setActiveDarkMode] = useState(()=>{
+  const [activeDarkMode, setActiveDarkMode] = useState(() => {
     const savedMode = localStorage.getItem("darkMode");
     return savedMode ? JSON.parse(savedMode) : false;
   });

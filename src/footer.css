@@ -1,9 +1,28 @@
-/* footer.css */
+/* ============================= */
+/* FOOTER */
+/* ============================= */
+
 .footer {
   background: var(--bg-project-color);
-  padding: 25px 20px;
-  margin-top: 80px;
-  border-top: 1px solid rgba(128, 128, 128, 0.2);
+  padding: 35px 20px;
+  margin-top: 100px;
+  border-top: 1px solid rgba(128, 128, 128, 0.15);
+  position: relative;
+  position: relative;
+  
+}
+
+/* Subtle top accent line */
+.footer::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 80px;
+  height: 3px;
+  background: var(--bg-header-color);
+  border-radius: 4px;
 }
 
 .footer-content {
@@ -12,30 +31,42 @@
   text-align: center;
   display: flex;
   flex-direction: column;
-  gap: 8px;
+  gap: 10px;
 }
 
 .copyright {
   color: var(--bg-subColor);
-  font-size: 0.875rem;
+  font-size: 0.9rem;
   font-weight: 400;
+  letter-spacing: 0.5px;
 }
 
 .built-with {
   color: var(--bg-navigation-color);
-  font-size: 0.875rem;
-  font-weight: 400;
+  font-size: 0.9rem;
+  font-weight: 500;
+  transition: color 0.3s ease;
+}
+
+/* Optional hover highlight */
+.built-with:hover {
+  color: var(--bg-header-color);
 }
 
 .icon {
   display: inline-block;
-  margin-right: 4px;
+  margin-right: 6px;
+  vertical-align: middle;
 }
+
+/* ============================= */
+/* RESPONSIVE */
+/* ============================= */
 
 @media (max-width: 768px) {
   .footer {
-    padding: 20px 15px;
-    margin-top: 60px;
+    padding: 25px 15px;
+    margin-top: 70px;
   }
 
   .copyright,

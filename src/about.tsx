@@ -14,7 +14,7 @@ function About() {
     },
     {
       title: "💼 Status",
-      value: "Open to Work",
+      value: "Available for Hire",
     },
   ];
 
