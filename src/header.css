@@ -12,7 +12,7 @@
   justify-content: space-between;
   align-items: center;
   border-radius: 10px;
-  z-index: 10000;
+  z-index: 100;
   background: var(--bg-header);
   backdrop-filter: blur(24px);
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
@@ -87,7 +87,7 @@
   position: fixed;
   inset: 0;
   background: rgba(0, 0, 0, 0.5);
-  z-index: 1000;
+  z-index: 0;
   opacity: 0;
   transition: opacity 0.3s ease;
 }
@@ -103,6 +103,8 @@
   position: fixed;
   top: 50%;
   left: 50%;
+  z-index: 0;
+
   transform: translate(-50%, -60%); /* Start position for animation */
   width: min(90vw, 400px); /* Responsive width */
   background: var(--bg-background, white);
@@ -138,14 +140,11 @@
 
 .apperance {
   margin-bottom: 0;
-  display:flex;
+  display: flex;
   justify-content: space-between;
-  background:var(--bg-project-color);
+  background: var(--bg-project-color);
   padding: 0.5rem 1rem;
   border-radius: 8px;
-
-
- 
 }
 .mobile-menu.active ul li:not(:last-child)::before {
   content: "";
@@ -296,7 +295,8 @@
   .left-button {
     display: flex; /* Show left button */
   }
-  .dark-mode-toggle, .download-Button {
+  .dark-mode-toggle,
+  .download-Button {
     display: none; /* Hide dark mode and download button */
   }
   .icon-menu {
