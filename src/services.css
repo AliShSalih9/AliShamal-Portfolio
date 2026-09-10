@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Stardos+Stencil:wght@400;700&family=Inter:wght@300;400;500;600&display=swap");
+﻿@import url("https://fonts.googleapis.com/css2?family=Stardos+Stencil:wght@400;700&family=Inter:wght@300;400;500;600&display=swap");
 .services-container {
   display: flex;
   flex-direction: column;
@@ -19,7 +19,7 @@
   margin: 0 0 10px 0;
   background-image: linear-gradient(
     to right,
-    #ff8c42 0%,
+    var(--color-accent) 0%,
     rgba(3, 244, 164, 0) 70%
   );
   background-size: 100% 2px;
@@ -128,7 +128,7 @@
 }
 
 .service-card:hover h3 {
-  color: #a04500;
+  color: var(--color-accent-strong);
   transform: scale(1.05);
 }
 
@@ -164,3 +164,4 @@
     height: 75px;
   }
 }
+

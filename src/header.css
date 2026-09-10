@@ -1,4 +1,4 @@
-/* ====== DESKTOP HEADER ====== */
+﻿/* ====== DESKTOP HEADER ====== */
 .header {
   position: fixed;
   top: 20px;
@@ -15,7 +15,7 @@
   z-index: 100;
   background: var(--bg-header);
   backdrop-filter: blur(24px);
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  box-shadow: 0 4px 12px var(--shadow-sm);
 }
 
 .header .logo-nav {
@@ -72,7 +72,7 @@
   bottom: -3px;
   width: 0%;
   height: 2px;
-  background: #c85300;
+  background: var(--color-nav-indicator);
   transition: width 0.3s ease; /* Underline effect on hover */
 }
 
@@ -146,6 +146,10 @@
   padding: 0.5rem 1rem;
   border-radius: 8px;
 }
+.apperance .icon-appearance {
+  font-size: 1.2rem;
+  color: var(--bg-subColor);
+}
 .mobile-menu.active ul li:not(:last-child)::before {
   content: "";
   position: absolute;
@@ -218,6 +222,7 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
+  color: var(--bg-project-color);
   padding: 0 2px;
   cursor: pointer;
   transition: background 0.3s ease;
@@ -287,7 +292,7 @@
   display: none;
 }
 
-/* ====== BREAKPOINT: LARGE TABLETS (900px–1200px) ====== */
+/* ====== BREAKPOINT: LARGE TABLETS (900pxâ€“1200px) ====== */
 @media (max-width: 1200px) {
   .main-menu {
     display: none; /* Hide main menu on tablet */
@@ -304,7 +309,7 @@
   }
 }
 
-/* ====== BREAKPOINT: SMALL TABLETS (600px–900px) ====== */
+/* ====== BREAKPOINT: SMALL TABLETS (600pxâ€“900px) ====== */
 @media (max-width: 900px) {
   .header {
     height: 70px;
@@ -426,7 +431,7 @@
   }
 
   .mobile-menu.active ul li a:hover {
-    outline: 2px solid #ff7a00; /* Outline on hover in high contrast */
+    outline: 2px solid var(--color-accent); /* Outline on hover in high contrast */
     outline-offset: 2px;
   }
 }

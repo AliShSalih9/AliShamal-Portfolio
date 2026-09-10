@@ -12,6 +12,7 @@ import {
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import "./hero.css";
 import heroImage from "/hero.png";
+import heroImageMobile from "/hero-mobile.png";
 
 function Hero() {
   return (
@@ -29,7 +30,13 @@ function Hero() {
             alt="Ali Shamal - Software Engineer"
             loading="eager"
             width="450"
-            height="450"
+            height="450" className="desktop-image"
+          />
+          <img
+            src={heroImageMobile}
+            alt="Ali Shamal - Software Engineer"
+            loading="eager"
+            className="mobile-image"
           />
         </div>
 
@@ -43,7 +50,7 @@ function Hero() {
           </p>
 
           <div className="skill-icon">
-            <div className="header-stack">
+            <div className="header-stack" >
               <FontAwesomeIcon icon={faLaptopCode} className="stack-icon" />
               <h3>Developer Stack</h3>
             </div>

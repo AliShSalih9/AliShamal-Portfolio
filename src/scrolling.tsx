@@ -3,28 +3,11 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { useEffect, useState } from "react";
 import "./App.css";
 function Scrolling() {
-  const isMobile = (): boolean => {
-    return (
-      window.innerWidth <= 768 ||
-      /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(
-        navigator.userAgent,
-      )
-    );
-  };
   const [visible, setVisible] = useState(false);
   const [counter, setvalue] = useState(0);
 
   const scrollToTop = () => {
-    const speed = isMobile() ? 10000000 : 50; // speed of animation (bigger = faster herself)
-
-    const animate = () => {
-      if (window.scrollY > 0) {
-        window.scrollTo(0, window.scrollY - speed);
-        requestAnimationFrame(animate);
-      }
-    };
-
-    animate();
+    window.scrollTo({ top: 0, behavior: "auto" });
   };
 
   useEffect(() => {
@@ -62,7 +45,7 @@ function Scrolling() {
             width: `${counter + 3}%`,
             maxWidth: "100%",
             height: "3px",
-            background: "#ff7a00",
+            background: "var(--color-accent)",
           }}
         ></div>
       )}

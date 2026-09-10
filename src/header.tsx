@@ -47,6 +47,7 @@ function Header({
     { href: "#hero", label: "Home", id: "hero" },
     { href: "#about", label: "About", id: "about" },
     { href: "#skills", label: "Skills", id: "skills" },
+    { href: "#services", label: "Services", id: "services" },
     { href: "#projects", label: "Projects", id: "projects" },
     { href: "#exp", label: "Experiences", id: "exp" },
     { href: "#contact", label: "Contact", id: "contact" },
@@ -80,7 +81,7 @@ function Header({
           <FontAwesomeIcon
             icon={isMobileMenuOpen ? faMinus : faBars}
             className={`icon-menu ${isMobileMenuOpen ? "open" : ""}`}
-            onClick={toggleMobileMenu}
+            onClick={toggleMobileMenu} style={{ fontSize: "1.5rem", cursor: "pointer", color: "var(--color-accent)" }}
           />
         </div>
         <div
@@ -133,7 +134,9 @@ function Header({
 
             <li>
               <div className="apperance">
-                <div className="icon-apperance">Appearance</div>
+                <div className="icon-apperance" style={{ color: "var(--bg-subColor)" }}>
+                  Appearance
+                </div>
                 <div
                   className={
                     activeDarkMode === true ? "dark-mode active" : "dark-mode"

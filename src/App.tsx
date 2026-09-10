@@ -51,7 +51,7 @@ function App() {
 
   const [activeDarkMode, setActiveDarkMode] = useState(() => {
     const savedMode = localStorage.getItem("darkMode");
-    return savedMode ? JSON.parse(savedMode) : false;
+    return savedMode ? JSON.parse(savedMode) : true;
   });
 
   setTimeout(() => {

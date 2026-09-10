@@ -1,4 +1,4 @@
-/* ============================= */
+﻿/* ============================= */
 /* GLOBAL SAFE SETTINGS */
 /* ============================= */
 
@@ -9,7 +9,7 @@ body {
   background: var(--bg-background);
   min-height: 100vh;
 
-  overflow-x: hidden; /* 🚫 stop horizontal scroll */
+  overflow-x: hidden; /* ًںڑ« stop horizontal scroll */
 }
 
 * {
@@ -27,7 +27,7 @@ body {
   width: 50px;
   height: 50px;
 
-  background-color: #ff7a00;
+  background-color: var(--color-accent);
 
   border: none;
   border-radius: 50%;
@@ -47,7 +47,7 @@ body {
 
 .scroll-to-top:hover {
   transform: translateY(-4px);
-  background-color: #e66f00;
+  background-color: var(--color-accent-strong);
 }
 
 /* ============================= */
@@ -62,11 +62,11 @@ body {
   height: 4px;
   width: 0;
 
-  max-width: 100%; /* ✅ prevent overflow */
-  background-color: #ff7a00;
+  max-width: 100%; /* âœ… prevent overflow */
+  background-color: var(--color-accent);
 
   z-index: 999;
-  transition: width 0.25s ease;
+  transition: none;
 }
 
 /* ============================= */

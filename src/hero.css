@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Roboto+Condensed:ital,wght@0,100..900;1,100..900&display=swap");
+﻿@import url("https://fonts.googleapis.com/css2?family=Roboto+Condensed:ital,wght@0,100..900;1,100..900&display=swap");
 * {
   box-sizing: border-box;
 }
@@ -14,15 +14,17 @@
 
   padding: 50px 80px;
   padding-top: 220px;
+ 
 }
 /* Base bubble styles */
 .bubble {
   position: absolute;
   bottom: -10vh; /* start just below the viewport */
-  background-color: #ff8a4245;
+  background-color: var(--bg-bubble-color);
   border-radius: 50%;
   animation: rise 10s infinite linear;
   opacity: 0.6;
+  box-shadow: 0 0 18px var(--bg-bubble-glow);
 }
 
 /* Bubble sizes and positions using vw for responsiveness */
@@ -135,11 +137,14 @@
 }
 
 .container .left-container img {
-  width: 450px;
+  width: 1200px;
   height: auto;
   object-fit: contain;
   transition: transform 0.4s ease;
-  filter: drop-shadow(0 10px 30px rgba(0, 0, 0, 0.1));
+  filter: drop-shadow(0 10px 30px var(--shadow-sm));
+}
+.container .left-container .mobile-image {
+  display: none;
 }
 
 .container .left-container img:hover {
@@ -205,6 +210,7 @@
 .skill-icon {
   margin-top: 50px;
   background-color: var(--bg-skills);
+  border: 1px solid var(--color-stack-border);
   padding: 25px;
   border-radius: 16px;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.06);
@@ -215,7 +221,7 @@
 
 .skill-icon:hover {
   transform: translateY(-9px);
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12);
+  box-shadow: 0 8px 20px var(--shadow-md);
 }
 
 /* Developer Stack Header */
@@ -236,7 +242,8 @@
 }
 
 .stack-icon {
-  font-size: 36px;
+  width: 24px;
+  height: 24px;
   color: var(--bg-header-color);
   animation: moveing 4s infinite;
 }
@@ -244,7 +251,7 @@
 @keyframes moveing {
   25%,
   75% {
-    transform: translateY(2px);
+    transform: translateX(2px);
   }
   50%,
   100% {
@@ -262,8 +269,8 @@
 }
 
 .stack-card {
-  background: rgba(255, 255, 255, 0.06);
-  border: 1px solid rgba(255, 255, 255, 0.12);
+  background: color-mix(in srgb, var(--bg-stack-color) 92%, var(--color-accent));
+  border: 1px solid var(--color-stack-border);
   border-radius: 14px;
   width: 130px;
   height: 130px;
@@ -355,7 +362,9 @@
 
   .container .left-container img {
     width: 380px;
+    margin-top: 40px;
   }
+   
 
   .container .right-container h2 {
     font-size: 60px;
@@ -371,7 +380,9 @@
   }
 
   .stack-icon {
-    font-size: 32px;
+    font-size: 16px;
+    width: 14px;
+    height: 14px;
   }
 
   .stack-card {
@@ -400,8 +411,19 @@
     font-size: 10px;
   }
 
+
   .container .left-container img {
     width: 350px;
+  }
+  .container .left-container .mobile-image {
+    display: block;
+    width: 300px;
+         margin-top: 40px;
+
+  }
+
+  .container .left-container .desktop-image {
+    display: none;
   }
 
   .container .right-container h2 {
@@ -459,7 +481,9 @@
   }
 
   .stack-icon {
-    font-size: 30px;
+    font-size: 0px;
+    width: 20px;
+    height: 20px;
   }
 
   .stack-card {
@@ -707,7 +731,7 @@
   font-size: 36px;
   color: #fff;
   background: var(--bg-header-color);
-  padding: 20px;
+  padding: 10px;
 
   border-radius: 50%;
   transition: transform 0.3s;

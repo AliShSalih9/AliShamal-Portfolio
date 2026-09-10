@@ -1,4 +1,4 @@
-@keyframes gradientFlow {
+﻿@keyframes gradientFlow {
     0%{
         background-position: 0% 50%;
     }
@@ -126,7 +126,13 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    background: linear-gradient(-45deg, #C85300, #ff6b35, #ff8c42, #C85300);
+    background: linear-gradient(
+        -45deg,
+        var(--bg-splash-start),
+        var(--bg-splash-mid),
+        var(--bg-splash-end),
+        var(--bg-splash-start)
+    );
     height: 100vh;
     background-size: 400% 400%;
     color:white;

@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Stardos+Stencil:wght@400;700&family=Inter:wght@300;400;500;600&display=swap");
+﻿@import url("https://fonts.googleapis.com/css2?family=Stardos+Stencil:wght@400;700&family=Inter:wght@300;400;500;600&display=swap");
 
 .contact-container {
   display: flex;
@@ -28,7 +28,7 @@
   color: var(--bg-hero-color);
   background-image: linear-gradient(
     to right,
-    #ff8c42 0%,
+    var(--color-accent) 0%,
     rgba(3, 244, 164, 0) 70%
   );
   background-size: 100% 2px;
@@ -46,7 +46,7 @@
   border-radius: 12px;
   width: 75%;
   gap: 20px;
-  box-shadow: rgba(0, 0, 0, 0.08) 0px 2px 15px;
+  box-shadow: var(--shadow-sm) 0px 2px 15px;
 }
 
 .contact-container .right-contact .contact-message p {
@@ -79,7 +79,7 @@
 
 .contact-container .right-contact .contact-message input:focus,
 .contact-container .right-contact .contact-message textarea:focus {
-  border: 1px solid var(--bg-header-color);
+  border: 1px solid var(--color-focus);
   outline: none;
 }
 
@@ -99,7 +99,7 @@ textarea {
 }
 
 .contact-container button:hover {
-  background-color: rgb(230, 120, 0);
+  background-color: var(--color-accent-strong);
 }
 
 .contact-container .left-contact {
@@ -111,7 +111,7 @@ textarea {
   border-radius: 12px;
   gap: 20px;
   align-items: start;
-  box-shadow: rgba(0, 0, 0, 0.08) 0px 2px 15px;
+  box-shadow: var(--shadow-sm) 0px 2px 15px;
 }
 
 .info-contact {
@@ -126,7 +126,7 @@ textarea {
 
 .info-contact a {
   text-decoration: none;
-  color: #ff7a00;
+  color: var(--color-accent);
   font-size: 16px;
 }
 
@@ -173,7 +173,7 @@ textarea {
 }
 
 .fallowMe-social .github-social {
-  color: #535353;
+  color: var(--bg-header-text-color);
 }
 
 .dark .fallowMe-social .github-social {
@@ -195,7 +195,7 @@ textarea {
 }
 
 .loading-message {
-  color: #ff7a00;
+  color: var(--color-accent);
   display: flex;
   align-items: center;
   gap: 8px;
