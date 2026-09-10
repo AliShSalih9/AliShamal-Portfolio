@@ -159,7 +159,7 @@ textarea {
   width: 44px;
   height: 44px;
   font-size: 28px;
-  color: #fff;
+  color: var(--bg-navigation-color);
   background: var(--bg-stack-color);
   text-decoration: none;
   display: flex;
@@ -170,6 +170,14 @@ textarea {
   transition:
     background-color 0.3s,
     color 0.3s; /* Added color transition */
+}
+
+.fallowMe-social .github-social {
+  color: #535353;
+}
+
+.dark .fallowMe-social .github-social {
+  color: #f2f2f2;
 }
 
 .fallowMe-social .social-fallow:hover {

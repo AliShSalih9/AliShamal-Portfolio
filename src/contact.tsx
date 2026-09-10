@@ -8,6 +8,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { useState } from "react";
 import "./about.css";
 import "./contact.css";
+import Toast from "./toast";
 
 import axios from "axios";
 
@@ -22,26 +23,23 @@ function contact() {
   const [loading, setLoading] = useState(false);
 
   const [status, setStatus] = useState("");
+  const [showToast, setShowToast] = useState(false);
+  const [toastType, setToastType] = useState<"success" | "error">("success");
 
   const handleChange = (e: { target: { name: any; value: any } }) => {
     setForm({ ...form, [e.target.name]: e.target.value });
   };
   let statusMessage;
 
-  if (loading) {
-    statusMessage = <div className="loading-message">Sending message...</div>;
-  } else if (status) {
-    statusMessage = <div className="success-message">{status}</div>;
-  } else {
-    statusMessage = null; // nothing to show
-  }
+  
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     setLoading(true);
+    setShowToast(false);
 
     try {
       const res = await axios.post(
-        "https://api-ali-shamal-portfolio.vercel.app/contact",
+        "https://api-ali-shamal-portfolio-uc1z.vercel.app/contact",
         form
       );
 
@@ -49,12 +47,19 @@ function contact() {
       setStatus(res.data.message || "Message sent successfully!");
 
       if (res.data.success) {
+        setToastType("success");
+        setShowToast(true);
         setForm({ name: "", email: "", subject: "", message: "" }); // reset form
+      } else {
+        setStatus("Message not sent. Please try again later.");
+        setToastType("error");
+        setShowToast(true);
       }
     } catch (error: unknown) {
       // TypeScript-safe
-      const err = error as any; // simplest approach
-      setStatus(err.response?.data?.message || "Something went wrong");
+      setStatus("Message not sent. Please try again later.");
+      setToastType("error");
+      setShowToast(true);
     } finally {
       setLoading(false);
     }
@@ -177,10 +182,9 @@ function contact() {
 
                 <a
                   href="https://github.com/AliShSalih9"
-                  className="social-fallow"
+                  className="social-fallow github-social"
                   target="_blank"
                   rel="noopener noreferrer"
-                  style={{color:'white'}}
                 >
                   <FontAwesomeIcon icon={faGithub} />
                 </a>
@@ -207,6 +211,11 @@ function contact() {
           </div>
         </div>
       </form>
+      <Toast
+        message={status || "Message sent successfully!"}
+        visible={showToast}
+        type={toastType}
+      />
     </>
   );
 }

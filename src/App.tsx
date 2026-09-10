@@ -12,7 +12,6 @@ import ScrollToTop from "./scrolling";
 import Services from "./services";
 import Skills from "./skills";
 import Splash from "./splash";
-
 function App() {
   const [showSplash, setShowSplash] = useState(true);
   const [activeSection, setActiveSection] = useState("Home");
