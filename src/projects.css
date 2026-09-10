@@ -135,9 +135,11 @@
 .project-language {
   background: var(--color-muted-surface);
   padding: 6px 12px;
+  border: 1px solid transparent;
+  border-color: var(--color-muted-border);
   border-radius: 20px;
   font-size: 0.85rem;
-  color: #555;
+  color: var(--bg-color);
 }
 
 .footer-card {
