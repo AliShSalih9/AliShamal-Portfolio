@@ -16,6 +16,10 @@ body {
   box-sizing: border-box;
 }
 
+section[id] {
+  scroll-margin-top: 7rem;
+}
+
 /* ============================= */
 /* SCROLL TO TOP BUTTON */
 /* ============================= */

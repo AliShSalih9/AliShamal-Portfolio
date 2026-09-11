@@ -25,9 +25,19 @@ function Header({
   const toggleMobileMenu = () => setIsMobileMenuOpen(!isMobileMenuOpen);
   const closeMobileMenu = () => setIsMobileMenuOpen(false);
 
-  const handleNavClick = (section: string) => {
+  const handleNavClick = (
+    event: React.MouseEvent<HTMLAnchorElement>,
+    section: string,
+    href: string,
+  ) => {
+    event.preventDefault();
     setActivePage(section);
     closeMobileMenu();
+    window.history.pushState(null, "", href);
+    document.getElementById(section)?.scrollIntoView({
+      behavior: "smooth",
+      block: "start",
+    });
   };
 
   // Update active page if prop changes
@@ -125,7 +135,7 @@ function Header({
                 <a
                   href={link.href}
                   className={activePage === link.id ? "active" : ""}
-                  onClick={() => handleNavClick(link.id)}
+                  onClick={(event) => handleNavClick(event, link.id, link.href)}
                 >
                   {link.label}
                 </a>
