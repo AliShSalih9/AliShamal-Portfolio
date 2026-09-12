@@ -4,6 +4,24 @@ import "./projects.css";
 
 function projects() {
   const projects = [
+  {
+  id: 8,
+  title: "Noor AlBasra System",
+description: `Complete car dealership management system for managing vehicles, customers, and sales. Features an organized dashboard for easy dealership management.
+Private system — screenshots available in the project preview.`,
+  image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ7FYF_44yIV3hINow7X2c609D_06ePqF4QHCSPGsS52GTrM1CZwGppQYib&s=10",
+  technologies: [
+    "html",
+    "css",
+    "javascript",
+    "jquery",
+      "Google Sheets",
+    "Google Apps Script",
+   ],
+  live: "https://drive.google.com/drive/folders/1e5AAdnaugmE4WcOC4QUW6XuI9VT0Dl-n?usp=drive_link"
+},
+   
+    ,
     {
       id: 7,
       title: "Best Vision App",
