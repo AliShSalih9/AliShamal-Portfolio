@@ -1,9 +1,9 @@
 import { useState } from "react";
-import ProjectCard from "./project-card";
+import ProjectCard, { type Project } from "./project-card";
 import "./projects.css";
 
 function projects() {
-  const projects = [
+  const projects: Project[] = [
   {
   id: 8,
   title: "Noor AlBasra System",
@@ -21,7 +21,6 @@ Private system — screenshots available in the project preview.`,
   live: "https://drive.google.com/drive/folders/1e5AAdnaugmE4WcOC4QUW6XuI9VT0Dl-n?usp=drive_link"
 },
    
-    ,
     {
       id: 7,
       title: "Best Vision App",
