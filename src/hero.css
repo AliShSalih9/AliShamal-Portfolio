@@ -137,7 +137,7 @@
 }
 
 .container .left-container img {
-  width: 1200px;
+  width: 1300px;
   height: auto;
   object-fit: contain;
   transition: transform 0.4s ease;
@@ -453,6 +453,7 @@
   .container .left-container img {
     width: 320px;
   }
+  z
   .hi {
     font-size: 10px;
   }

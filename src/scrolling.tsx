@@ -23,6 +23,7 @@ function Scrolling() {
       setvalue(progress); // <-- this becomes 0 → 100
     };
 
+    handleScroll();
     window.addEventListener("scroll", handleScroll);
 
     return () => window.removeEventListener("scroll", handleScroll);

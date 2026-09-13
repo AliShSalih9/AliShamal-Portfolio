@@ -93,13 +93,35 @@ textarea {
   color: white;
   border: none;
   border-radius: 8px;
-  padding: 24px 32px;
+  padding: 16px 32px;
+  font-size: 1rem;
+  font-weight: 600;
   cursor: pointer;
-  transition: background-color 0.3s;
+  transition: background-color 0.2s ease, transform 0.15s ease, box-shadow 0.2s ease;
 }
 
 .contact-container button:hover {
+  background-color: color-mix(in srgb, var(--bg-header-color) 85%, black);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.contact-container button:active {
+  transform: scale(0.98);
+}
+
+.contact-container button:focus-visible {
+  outline: 2px solid var(--bg-header-color);
+  outline-offset: 3px;
+}
+
+.contact-container button:disabled {
+  background-color: #ccc;
+  cursor: not-allowed;
+  box-shadow: none;
+}
+.contact-container button:hover {
   background-color: var(--color-accent-strong);
+  color: var(--color-on-accent);
 }
 
 .contact-container .left-contact {
