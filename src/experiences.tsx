@@ -8,14 +8,24 @@ function Experiences() {
      
 
     const experiences=[
-         {  
+          {  
         title:"Mobile Developer @Freelance",
-        date:"Aug 2025 - Present",
+        date:"Jan 2021 - Present",
         location:"Akre",
         link:"",
         description:"Weather App – A mobile application that provides real-time weather information, including temperature, weather conditions, location, and sunrise/sunset times, helping users plan their day efficiently.",
         technologies:["Flutter","Firebase","Figma",],
       },
+        {
+  title: "Software Developer @Freelance",
+  date: "Jun 2023 - Present",
+  location: "Hawler, Kurdistan Region, Iraq",
+  link: "",
+  description:
+    "Noor Albasra – A car exhibition and auction management system that helps manage vehicles, customers, sales, auctions, and business records efficiently, using Google Sheets as a backend and Google Apps Script for data management and automation.",
+  technologies: ["html & css", "javascript", "jquery", "Google Sheets", "Google Apps Script"],
+},
+       
         
         {  
             

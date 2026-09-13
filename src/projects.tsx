@@ -5,7 +5,7 @@ import "./projects.css";
 function projects() {
   const projects: Project[] = [
   {
-  id: 8,
+  id: 9,
   title: "Noor AlBasra System",
 description: `Complete car dealership management system for managing vehicles, customers, and sales. Features an organized dashboard for easy dealership management.
 Private system — screenshots available in the project preview.`,
@@ -22,7 +22,7 @@ Private system — screenshots available in the project preview.`,
 },
    
     {
-      id: 7,
+      id: 8,
       title: "Best Vision App",
       description:
         "Flutter app using TensorFlow Lite to detect animals from camera or gallery images. It processes only the area inside a green box by cropping the image before prediction. Supports 10 animals: squirrel, spider, sheep, cow, cat, chicken, butterfly, elephant, horse, and dog. Built with camera, image, and GetX.",
