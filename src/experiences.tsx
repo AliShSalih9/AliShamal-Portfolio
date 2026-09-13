@@ -106,11 +106,11 @@ const toggleOpen = (index: number) => {
                             <hr/>
                             <div className="location-details">
 <div className="location">
-    <FontAwesomeIcon icon={faLocationDot} style={{color: "#ff7b00",}} />      
+    <FontAwesomeIcon icon={faLocationDot} style={{color: "--bg-color",}} />      
 <span>{exp.location}</span>
 </div>
 { exp.link && <div className="link">
-    <FontAwesomeIcon icon={faLink} style={{color: "#ff7b00",}} />      
+    <FontAwesomeIcon icon={faLink} style={{color: "--bg-secondary",}} />      
 <span>{exp.link}</span>
 </div>      }          </div>
 <span>{exp.description}</span>
