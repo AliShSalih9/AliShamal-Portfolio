@@ -190,7 +190,7 @@ function contact() {
                 </a>
 
                 <a
-                  href="https://www.instagram.com/ali.aqrawi9/"
+                  href="https://www.instagram.com/ali.shamal.dev/"
                   className="social-fallow"
                   target="_blank"
                   rel="noopener noreferrer"
