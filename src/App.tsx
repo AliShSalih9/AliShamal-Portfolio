@@ -9,8 +9,7 @@ import Header from "./header";
 import Hero from "./hero";
 import Projects from "./projects";
 import ScrollToTop from "./scrolling";
-import Services from "./services";
-import Skills from "./skills";
+  import Skills from "./skills";
 import Splash from "./splash";
 function App() {
   const [showSplash, setShowSplash] = useState(true);
@@ -22,8 +21,7 @@ function App() {
         "hero",
         "about",
         "skills",
-        "services",
-        "projects",
+         "projects",
         "exp",
         "contact",
       ];
@@ -79,9 +77,7 @@ function App() {
         <section id="skills">
           <Skills />
         </section>
-        <section id="services">
-          <Services />
-        </section>
+    
         <section id="projects">
           <Projects />
         </section>

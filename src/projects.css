@@ -1,4 +1,4 @@
-﻿@import url("https://fonts.googleapis.com/css2?family=Stardos+Stencil:wght@400;700&family=Inter:wght@300;400;500;600&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Stardos+Stencil:wght@400;700&family=Inter:wght@300;400;500;600&display=swap");
 
 .projects-container {
   min-height: 100vh;
@@ -97,8 +97,9 @@
 
 .project-card img {
   width: 100%;
-  height: 220px;
-  object-fit: contain;
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
+  display: block;
 }
 
 .project-content {
@@ -224,10 +225,6 @@
   .projects-container p {
     width: 80%;
   }
-
-  .project-card img {
-    height: 200px;
-  }
 }
 
 /* Tablet - Small (768px and below) */
@@ -299,10 +296,6 @@
     width: 95%;
   }
 
-  .project-card img {
-    height: 180px;
-  }
-
   .project-content {
     padding: 16px;
   }
@@ -372,10 +365,6 @@
     padding: 15px 0;
   }
 
-  .project-card img {
-    height: 160px;
-  }
-
   .project-content {
     padding: 14px;
   }
@@ -417,10 +406,6 @@
   .projects-container h2::after {
     width: 60px;
     height: 5px;
-  }
-
-  .project-card img {
-    height: 140px;
   }
 
   .project-content {

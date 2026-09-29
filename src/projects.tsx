@@ -9,7 +9,7 @@ function projects() {
   title: "Noor AlBasra System",
 description: `Complete car dealership management system for managing vehicles, customers, and sales. Features an organized dashboard for easy dealership management.
 Private system — screenshots available in the project preview.`,
-  image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ7FYF_44yIV3hINow7X2c609D_06ePqF4QHCSPGsS52GTrM1CZwGppQYib&s=10",
+  image: "https://plain-eeur-prod-public.komododecks.com/202609/29/j7PuE6HUG5tjbpox1F4x/image.jpg",
   technologies: [
     "html",
     "css",
@@ -26,7 +26,7 @@ Private system — screenshots available in the project preview.`,
       title: "Best Vision App",
       description:
         "Flutter app using TensorFlow Lite to detect animals from camera or gallery images. It processes only the area inside a green box by cropping the image before prediction. Supports 10 animals: squirrel, spider, sheep, cow, cat, chicken, butterfly, elephant, horse, and dog. Built with camera, image, and GetX.",
-      image: "https://m.media-amazon.com/images/I/91K9ToVgR3L.jpg",
+      image: "https://plain-eeur-prod-public.komododecks.com/202609/28/21FIMpjgBn1RRbEoQCRp/image.jpg",
       technologies: [
         "Flutter",
         "TensorFlow Lite",
@@ -41,7 +41,7 @@ Private system — screenshots available in the project preview.`,
       title: "Weather App",
       description:
         "A Flutter weather application that fetches real-time weather data using OpenWeather API and displays temperature, location, and conditions.",
-      image: "https://cdn-icons-png.flaticon.com/512/3845/3845731.png",
+      image: "https://plain-eeur-prod-public.komododecks.com/202609/28/pPDfdp3mUd8J2lAEksYp/image.jpg",
       technologies: ["Flutter", "REST API", "OpenWeather"],
       live: "https://www.linkedin.com/posts/ali-shamal-895516288_flutter-dart-weatherapp-activity-7317223711302987776-Zusr?utm_source=share&utm_medium=member_desktop&rcm=ACoAAEXX-nEBVwE-aMRN4-_myNJwKVK4MR5ulik",
       github: "https://github.com/AliShSalih9/Weather_Application",
@@ -53,7 +53,7 @@ Private system — screenshots available in the project preview.`,
       description:
         "A web-based feedback system that allows students to submit feedback anonymously and administrators to generate reports.",
       image:
-        "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTjgSgOD9gobJxqCwwtAqVYzYBMpkgROZmrAA&s",
+        "https://plain-eeur-prod-public.komododecks.com/202609/28/6MycFNtbgXymssd8UdmT/image.jpg",
       technologies: ["PHP", "MySQL", "Bootstrap"],
       live: "https://pci-akre.com/",
       github: "",
@@ -65,7 +65,7 @@ Private system — screenshots available in the project preview.`,
       description:
         "A Windows Forms Point of Sale system with barcode scanning, multi-language support, debt management, and receipt printing.",
       image:
-        "https://cdn-icons-png.freepik.com/256/6140/6140106.png?semt=ais_white_label",
+        "https://plain-eeur-prod-public.komododecks.com/202609/28/ATuXLYWqXSdA2UsSO5o5/image.jpg",
       technologies: ["C#", "SQL Server", "DevExpress"],
       live: "",
       github: "https://github.com/yourusername/pos-sales",
@@ -76,7 +76,7 @@ Private system — screenshots available in the project preview.`,
       title: "School Performance For Student",
       description:
         "School performance reflects a student’s academic achievement and learning progress.It includes grades, attendance, and participation in school activities.Overall, it shows the student’s engagement, discipline, and understanding.",
-      image: "https://educloud.app/lms/src/performance-analytics/hero.png",
+      image: "https://plain-eeur-prod-public.komododecks.com/202609/28/CPVOcxUrnWVpUaYpA8Ij/image.jpg",
       technologies: ["PHP", "AJAX", "DataTables", "MySQL"],
       live: "https://briyan.pci-akre.com/osrs/teacher_login.php",
       github: "",
@@ -88,7 +88,7 @@ Private system — screenshots available in the project preview.`,
       description:
         "A Windows Forms application built with C# for camera access and image capture. It supports live preview, photo capturing, and saving images locally.",
       image:
-        "https://d585tldpucybw.cloudfront.net/sfimages/default-source/10x/telerik-ui-for-winforms-ninja.png?sfvrsn=b1798554_1",
+        "https://plain-eeur-prod-public.komododecks.com/202609/28/uchG6A35uUqfBL49JYA6/image.jpg",
       technologies: ["C#", "Windows Forms", "AForge"],
       live: "",
       github: "https://github.com/yourusername/camera-windowsform-csharp",
@@ -99,7 +99,7 @@ Private system — screenshots available in the project preview.`,
       description:
         "A Flutter-based eCommerce application for selling electronic devices. It uses APIs for data fetching and local storage to manage cart and user data offline.",
       image:
-        "https://buildfire.com/wp-content/uploads/2024/09/Ecommerce-mobile-app-scaled-3.png",
+        "https://plain-eeur-prod-public.komododecks.com/202609/28/2uKV8ke7MmyypsyLwHql/image.jpg",
       technologies: ["Flutter", "REST API", "Local Storage"],
       live: "",
       github: "https://github.com/AliShSalih9/device-ecommerce",
@@ -110,7 +110,7 @@ Private system — screenshots available in the project preview.`,
       description:
         "A web-based task management system built with Node.js and MongoDB. It supports task creation, updates, deletion, and user authentication through RESTful APIs.",
       image:
-        "https://cdn-icons-png.freepik.com/256/3286/3286920.png?semt=ais_white_label",
+        "https://plain-eeur-prod-public.komododecks.com/202609/28/uXnUhyIzWR1rKHXAM5wn/image.jpg",
       technologies: ["Node.js", "Express", "MongoDB", "REST API"],
       live: "",
       github: "https://github.com/AliShSalih9/task-manager-node-mongo",

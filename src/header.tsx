@@ -26,18 +26,32 @@ function Header({
   const closeMobileMenu = () => setIsMobileMenuOpen(false);
 
   const handleNavClick = (
-    event: React.MouseEvent<HTMLAnchorElement>,
+    event: React.MouseEvent<HTMLElement>,
     section: string,
     href: string,
   ) => {
     event.preventDefault();
     setActivePage(section);
+    const wasMobileMenuOpen = isMobileMenuOpen;
     closeMobileMenu();
     window.history.pushState(null, "", href);
-    document.getElementById(section)?.scrollIntoView({
-      behavior: "smooth",
-      block: "start",
-    });
+
+    const scrollToSection = () => {
+      const element = document.getElementById(section);
+      if (element) {
+        element.scrollIntoView({
+          behavior: "smooth",
+          block: "start",
+        });
+      }
+    };
+
+    if (wasMobileMenuOpen) {
+      // wait for mobile menu scroll lock to be released and document flow to restore
+      setTimeout(scrollToSection, 80);
+    } else {
+      scrollToSection();
+    }
   };
 
   // Update active page if prop changes
@@ -45,11 +59,27 @@ function Header({
     if (activeSection) setActivePage(activeSection);
   }, [activeSection]);
 
-  // Lock body scroll when mobile menu is open
+  // Lock scroll when mobile menu is open
   useEffect(() => {
-    document.body.style.overflow = isMobileMenuOpen ? "hidden" : "unset";
+    if (!isMobileMenuOpen) return;
+
+    const scrollY = window.scrollY;
+    const html = document.documentElement;
+    const body = document.body;
+
+    html.style.overflow = "hidden";
+    body.style.overflow = "hidden";
+    body.style.position = "fixed";
+    body.style.top = `-${scrollY}px`;
+    body.style.width = "100%";
+
     return () => {
-      document.body.style.overflow = "unset";
+      html.style.overflow = "";
+      body.style.overflow = "";
+      body.style.position = "";
+      body.style.top = "";
+      body.style.width = "";
+      window.scrollTo(0, scrollY); // restore position
     };
   }, [isMobileMenuOpen]);
 
@@ -57,7 +87,6 @@ function Header({
     { href: "#hero", label: "Home", id: "hero" },
     { href: "#about", label: "About", id: "about" },
     { href: "#skills", label: "Skills", id: "skills" },
-    { href: "#services", label: "Services", id: "services" },
     { href: "#projects", label: "Projects", id: "projects" },
     { href: "#exp", label: "Experiences", id: "exp" },
     { href: "#contact", label: "Contact", id: "contact" },
@@ -67,7 +96,10 @@ function Header({
     <>
       <header className="header">
         <div className="logo-nav">
-          <div className="logo">
+          <div
+            className="logo"
+            onClick={(event) => handleNavClick(event, "hero", "#hero")}
+          >
             <h1 className="logo-icon">&lt;/&gt;</h1>
             <h1>Ali Tech</h1>
           </div>
@@ -78,7 +110,9 @@ function Header({
                   <a
                     href={link.href}
                     className={activePage === link.id ? "active" : ""}
-                    onClick={() => setActivePage(link.id)}
+                    onClick={(event) =>
+                      handleNavClick(event, link.id, link.href)
+                    }
                   >
                     {link.label}
                   </a>
